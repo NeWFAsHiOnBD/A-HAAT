@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MyShop - A complete online marketplace for electronics, fashion, home, beauty, gaming, books and more."
+    >
+
+    <meta
+        name="keywords"
+        content="MyShop, online shopping, marketplace, electronics, fashion, Bangladesh"
+    >
+
+    <meta
+        name="author"
+        content="MyShop"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f85606"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+<link rel="stylesheet" href="style.css">
+
+
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
+
+    <meta
+        property="og:title"
+        content="MyShop - Online Marketplace"
+    >
+
+    <meta
+        property="og:description"
+        content="Shop thousands of products from trusted sellers."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="/"
+    >
+
+
+    <!-- =====================================================
+         TITLE
+    ====================================================== -->
+
+    <title>
+        MyShop - Online Marketplace
+    </title>
+
+
+    <!-- =====================================================
+         STYLESHEET
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =====================================================
+         STRUCTURED DATA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "OnlineStore",
+        "name": "MyShop",
+        "description": "Online marketplace",
+        "url": "/"
+    }
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ACCESSIBILITY
+========================================================= -->
+
+<a
+    href="#main-content"
+    class="skip-link"
+>
+    Skip to main content
+</a>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div
+    class="announcement-bar"
+    role="banner"
+>
+
+    <div class="container announcement-inner">
+
+        <div class="announcement-message">
+
+            🎉
+            <span>
+                Welcome to MyShop — Discover amazing deals every day!
+            </span>
+
+        </div>
+
+
+        <div class="announcement-actions">
+
+            <a href="#">
+                Save More on App
+            </a>
+
+            <a href="#become-seller">
+                Sell on MyShop
+            </a>
+
+            <a href="#help">
+                Help & Support
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+
+    <!-- =====================================================
+         MAIN HEADER
+    ====================================================== -->
+
+    <div class="header-main">
+
+        <div class="container header-main-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="/"
+                class="logo"
+                aria-label="MyShop Home"
+            >
+
+                <span class="logo-primary">
+                    My
+                </span>
+
+                <span class="logo-secondary">
+                    Shop
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 SEARCH
+            ================================================== -->
+
+            <div
+                class="search-container"
+                role="search"
+            >
+
+                <form
+                    id="searchForm"
+                    class="search-form"
+                    action="/search"
+                    method="GET"
+                >
+
+                    <label
+                        for="searchInput"
+                        class="visually-hidden"
+                    >
+                        Search products
+                    </label>
+
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        name="q"
+                        placeholder="Search products, brands and more..."
+                        autocomplete="off"
+                        aria-autocomplete="list"
+                        aria-controls="searchSuggestions"
+                        aria-expanded="false"
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="search-button"
+                        aria-label="Search"
+                    >
+                        🔍
+                    </button>
+
+                </form>
+
+
+                <!-- SEARCH SUGGESTIONS -->
+
+                <div
+                    id="searchSuggestions"
+                    class="search-suggestions"
+                    role="listbox"
+                    hidden
+                >
+
+                    <div class="search-section">
+
+                        <h3>
+                            Popular Searches
+                        </h3>
+
+                        <a href="/search?q=smartphone">
+                            Smartphone
+                        </a>
+
+                        <a href="/search?q=headphone">
+                            Wireless Headphone
+                        </a>
+
+                        <a href="/search?q=smart+watch">
+                            Smart Watch
+                        </a>
+
+                        <a href="/search?q=shoes">
+                            Sports Shoes
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="search-section"
+                        id="recentSearches"
+                    >
+
+                        <h3>
+                            Recent Searches
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACCOUNT ACTIONS
+            ================================================== -->
+
+            <div class="header-actions">
+
+
+                <!-- WISHLIST -->
+
+                <a
+                    href="/wishlist"
+                    class="header-action"
+                    aria-label="Wishlist"
+                >
+
+                    <span class="action-icon">
+                        ♡
+                    </span>
+
+                    <span class="action-text">
+                        Wishlist
+                    </span>
+
+                    <span
+                        id="wishlistCount"
+                        class="action-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- CART -->
+
+                <a
+                    href="/cart"
+                    class="header-action cart-action"
+                    aria-label="Shopping cart"
+                >
+
+                    <span class="action-icon">
+                        🛒
+                    </span>
+
+                    <span class="action-text">
+                        Cart
+                    </span>
+
+                    <span
+                        id="cartCount"
+                        class="action-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- ACCOUNT -->
+
+                <button
+                    type="button"
+                    class="header-action account-action"
+                    id="accountButton"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                >
+
+                    <span class="action-icon">
+                        👤
+                    </span>
+
+                    <span class="action-text">
+                        Account
+                    </span>
+
+                </button>
+
+
+                <!-- ACCOUNT MENU -->
+
+                <div
+                    id="accountMenu"
+                    class="account-menu"
+                    role="menu"
+                    hidden
+                >
+
+                    <a href="/login">
+                        Login
+                    </a>
+
+                    <a href="/register">
+                        Create Account
+                    </a>
+
+                    <a href="/orders">
+                        My Orders
+                    </a>
+
+                    <a href="/profile">
+                        My Profile
+                    </a>
+
+                    <a href="/wishlist">
+                        My Wishlist
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav
+        class="main-navigation"
+        aria-label="Main navigation"
+    >
+
+        <div class="container navigation-inner">
+
+
+            <!-- ALL CATEGORIES -->
+
+            <div
+                class="categories-navigation"
+                id="categoriesNavigation"
+            >
+
+                <button
+                    type="button"
+                    id="categoriesButton"
+                    class="categories-button"
+                    aria-expanded="false"
+                    aria-controls="megaMenu"
+                >
+
+                    ☰
+
+                    <span>
+                        Categories
+                    </span>
+
+                    <span>
+                        ▾
+                    </span>
+
+                </button>
+
+
+                <!-- MEGA MENU -->
+
+                <div
+                    id="megaMenu"
+                    class="mega-menu"
+                    hidden
+                >
+
+
+                    <!-- ELECTRONICS -->
+
+                    <div class="mega-menu-column">
+
+                        <h3>
+                            📱 Electronics
+                        </h3>
+
+                        <a href="/category/mobile">
+                            Mobile Phones
+                        </a>
+
+                        <a href="/category/laptop">
+                            Laptops
+                        </a>
+
+                        <a href="/category/tablet">
+                            Tablets
+                        </a>
+
+                        <a href="/category/headphones">
+                            Headphones
+                        </a>
+
+                        <a href="/category/smartwatch">
+                            Smart Watches
+                        </a>
+
+                        <a href="/category/camera">
+                            Cameras
+                        </a>
+
+                        <a href="/category/electronics">
+                            View Electronics →
+                        </a>
+
+                    </div>
+
+
+                    <!-- FASHION -->
+
+                    <div class="mega-menu-column">
+
+                        <h3>
+                            👕 Fashion
+                        </h3>
+
+                        <a href="/category/mens-fashion">
+                            Men's Fashion
+                        </a>
+
+                        <a href="/category/womens-fashion">
+                            Women's Fashion
+                        </a>
+
+                        <a href="/category/shoes">
+                            Shoes
+                        </a>
+
+                        <a href="/category/bags">
+                            Bags
+                        </a>
+
+                        <a href="/category/watches">
+                            Watches
+                        </a>
+
+                        <a href="/category/accessories">
+                            Accessories
+                        </a>
+
+                        <a href="/category/fashion">
+                            View Fashion →
+                        </a>
+
+                    </div>
+
+
+                    <!-- HOME -->
+
+                    <div class="mega-menu-column">
+
+                        <h3>
+                            🏠 Home & Living
+                        </h3>
+
+                        <a href="/category/furniture">
+                            Furniture
+                        </a>
+
+                        <a href="/category/kitchen">
+                            Kitchen
+                        </a>
+
+                        <a href="/category/home-decor">
+                            Home Decor
+                        </a>
+
+                        <a href="/category/lighting">
+                            Lighting
+                        </a>
+
+                        <a href="/category/appliances">
+                            Appliances
+                        </a>
+
+                        <a href="/category/home">
+                            View Home & Living →
+                        </a>
+
+                    </div>
+
+
+                    <!-- OTHER -->
+
+                    <div class="mega-menu-column">
+
+                        <h3>
+                            🛍️ More Categories
+                        </h3>
+
+                        <a href="/category/beauty">
+                            Beauty
+                        </a>
+
+                        <a href="/category/gaming">
+                            Gaming
+                        </a>
+
+                        <a href="/category/books">
+                            Books
+                        </a>
+
+                        <a href="/category/sports">
+                            Sports
+                        </a>
+
+                        <a href="/category/grocery">
+                            Groceries
+                        </a>
+
+                        <a href="/category/automotive">
+                            Automotive
+                        </a>
+
+                        <a href="/categories">
+                            View All Categories →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MAIN NAVIGATION LINKS -->
+
+            <a
+                href="/"
+                class="nav-link active"
+            >
+                Home
+            </a>
+
+            <a
+                href="#flash-sale"
+                class="nav-link"
+            >
+                🔥 Flash Sale
+            </a>
+
+            <a
+                href="#best-selling"
+                class="nav-link"
+            >
+                ⭐ Best Selling
+            </a>
+
+            <a
+                href="#new-arrivals"
+                class="nav-link"
+            >
+                ✨ New Arrivals
+            </a>
+
+            <a
+                href="#recommended"
+                class="nav-link"
+            >
+                ❤️ Recommended
+            </a>
+
+            <a
+                href="#featured-shops"
+                class="nav-link"
+            >
+                🏪 Shops
+            </a>
+
+            <a
+                href="#become-seller"
+                class="nav-link"
+            >
+                Become a Seller
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main id="main-content">
+
+
+
+<!-- =========================================================
+     HERO / BANNER
+========================================================= -->
+
+<section
+    class="hero-section"
+    aria-label="Featured promotions"
+>
+
+
+    <div class="container hero-layout">
+
+
+        <!-- HERO SLIDER -->
+
+        <div
+            class="hero-slider"
+            id="heroSlider"
+        >
+
+
+            <!-- SLIDE 1 -->
+
+            <article
+                class="hero-slide active"
+                data-slide="1"
+            >
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        🔥 MEGA DEAL
+                    </span>
+
+                    <h1>
+                        Everything You Need,
+                        <br>
+                        All in One Place
+                    </h1>
+
+                    <p>
+                        Discover thousands of products
+                        from trusted sellers.
+                    </p>
+
+                    <a
+                        href="#flash-sale"
+                        class="primary-button"
+                    >
+                        Shop Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SLIDE 2 -->
+
+            <article
+                class="hero-slide"
+                data-slide="2"
+            >
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        ⚡ FLASH SALE
+                    </span>
+
+                    <h2>
+                        Save More Every Day
+                    </h2>
+
+                    <p>
+                        Limited-time offers on popular products.
+                    </p>
+
+                    <a
+                        href="#flash-sale"
+                        class="primary-button"
+                    >
+                        Explore Deals →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SLIDE CONTROLS -->
+
+            <button
+                type="button"
+                class="hero-prev"
+                aria-label="Previous slide"
+            >
+                ‹
+            </button>
+
+            <button
+                type="button"
+                class="hero-next"
+                aria-label="Next slide"
+            >
+                ›
+            </button>
+
+
+            <div
+                class="hero-dots"
+                aria-label="Slide navigation"
+            >
+
+                <button
+                    type="button"
+                    data-slide-to="1"
+                    aria-label="Slide 1"
+                ></button>
+
+                <button
+                    type="button"
+                    data-slide-to="2"
+                    aria-label="Slide 2"
+                ></button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SIDE PROMOTIONS -->
+
+        <aside class="hero-side-promotions">
+
+
+            <a
+                href="#vouchers"
+                class="promo-card"
+            >
+
+                <span>
+                    🎟️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Vouchers
+                    </strong>
+
+                    <small>
+                        Save more on every order
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="#featured-shops"
+                class="promo-card"
+            >
+
+                <span>
+                    🏪
+                </span>
+
+                <div>
+
+                    <strong>
+                        Featured Shops
+                    </strong>
+
+                    <small>
+                        Shop from trusted stores
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="#deals"
+                class="promo-card"
+            >
+
+                <span>
+                    💥
+                             </span>
+
+                <div>
+
+                    <strong>
+                        Daily Deals
+                    </strong>
+
+                    <small>
+                        New offers every day
+                    </small>
+
+                </div>
+
+            </a>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TRUST / SERVICES
+========================================================= -->
+
+<section
+    class="service-section"
+    aria-label="MyShop services"
+>
+
+    <div class="container service-grid">
+
+
+        <div class="service-item">
+
+            <span>
+                🚚
+            </span>
+
+            <div>
+
+                <strong>
+                    Fast Delivery
+                </strong>
+
+                <small>
+                    Quick & reliable delivery
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <span>
+                🔒
+            </span>
+
+            <div>
+
+                <strong>
+                    Secure Payment
+                </strong>
+
+                <small>
+                    Safe and secure checkout
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <span>
+                🛡️
+            </span>
+
+            <div>
+
+                <strong>
+                    Buyer Protection
+                </strong>
+
+                <small>
+                    Shop with confidence
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <span>
+                🔄
+            </span>
+
+            <div>
+
+                <strong>
+                    Easy Returns
+                </strong>
+
+                <small>
+                    Simple return process
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <span>
+                ✅
+            </span>
+
+            <div>
+
+                <strong>
+                    Trusted Sellers
+                </strong>
+
+                <small>
+                    Verified marketplace sellers
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section
+    class="content-section"
+    id="categories"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    SHOP BY
+                </span>
+
+                <h2>
+                    Categories
+                </h2>
+
+            </div>
+
+            <a href="/categories">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div class="category-grid">
+
+
+            <a
+                href="/category/electronics"
+                class="category-card"
+                data-category="electronics"
+            >
+
+                <span class="category-icon">
+                    📱
+                </span>
+
+                <span>
+                    Electronics
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/fashion"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    👕
+                </span>
+
+                <span>
+                    Fashion
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/home"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Home & Living
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/beauty"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    💄
+                </span>
+
+                <span>
+                    Beauty
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/gaming"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    🎮
+                </span>
+
+                <span>
+                    Gaming
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/books"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    📚
+                </span>
+
+                <span>
+                    Books
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/sports"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    ⚽
+                </span>
+
+                <span>
+                    Sports
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/grocery"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Groceries
+                </span>
+
+            </a>
+
+
+            <a
+                href="/category/automotive"
+                class="category-card"
+            >
+
+                <span class="category-icon">
+                    🚗
+                </span>
+
+                <span>
+                    Automotive
+                </span>
+
+            </a>
+
+
+            <a
+                href="/categories"
+                class="category-card view-all-category"
+            >
+
+                <span class="category-icon">
+                    ➕
+                </span>
+
+                <span>
+                    More
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     FLASH SALE
+========================================================= -->
+
+<section
+    class="content-section flash-sale"
+    id="flash-sale"
+    data-section="flash-sale"
+>
+
+    <div class="container">
+
+
+        <header class="section-header sale-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    LIMITED TIME
+                </span>
+
+                <h2>
+                    🔥 Flash Sale
+                </h2>
+
+            </div>
+
+
+            <div class="sale-countdown">
+
+                <span>
+                    Ends in
+                </span>
+
+                <time
+                    id="flashSaleTimer"
+                    datetime="PT5H"
+                >
+                    05:00:00
+                </time>
+
+            </div>
+
+
+            <a href="/flash-sale">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div
+            class="product-grid"
+            id="flashSaleProducts"
+        >
+
+
+            <!-- PRODUCT -->
+
+            <article
+                class="product-card"
+                data-product-id="product-001"
+                data-category="electronics"
+                data-price="18999"
+                data-stock="25"
+            >
+
+                <div class="product-media">
+
+                    <span class="discount-badge">
+                        -14%
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                        data-product-id="product-001"
+                        aria-label="Add Smartphone Pro to wishlist"
+                    >
+                        ♡
+                    </button>
+
+
+                    <a href="/product/smartphone-pro">
+                        <span class="product-placeholder">
+                            📱
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/smartphone-pro"
+                        class="product-title"
+                    >
+                        Smartphone Pro
+                    </a>
+
+
+                    <div
+                        class="product-rating"
+                        aria-label="5 out of 5 stars"
+                    >
+
+                        ⭐⭐⭐⭐⭐
+
+                        <span>
+                            (128)
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-price">
+                        ৳18,999
+                    </div>
+
+
+                    <div class="product-old-price">
+                        ৳22,000
+                    </div>
+
+
+                    <div class="product-meta">
+
+                        <span>
+                            245 sold
+                        </span>
+
+                        <span>
+                            25 left
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="product-001"
+                        data-product-name="Smartphone Pro"
+                        data-product-price="18999"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+             <!-- PRODUCT -->
+
+            <article
+                class="product-card"
+                data-product-id="product-002"
+                data-category="electronics"
+                data-price="1499"
+            >
+
+                <div class="product-media">
+
+                    <span class="discount-badge">
+                        -25%
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                        data-product-id="product-002"
+                        aria-label="Add Wireless Headphone to wishlist"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/wireless-headphone">
+                        <span class="product-placeholder">
+                            🎧
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/wireless-headphone"
+                        class="product-title"
+                    >
+                        Wireless Headphone
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐☆
+                        <span>
+                            (96)
+                        </span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳1,499
+                    </div>
+
+                    <div class="product-old-price">
+                        ৳2,000
+                    </div>
+
+                    <div class="product-meta">
+
+                        <span>
+                            512 sold
+                        </span>
+
+                        <span>
+                            42 left
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="product-002"
+                        data-product-name="Wireless Headphone"
+                        data-product-price="1499"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT -->
+
+            <article
+                class="product-card"
+                data-product-id="product-003"
+                data-category="electronics"
+                data-price="2499"
+            >
+
+                <div class="product-media">
+
+                    <span class="discount-badge">
+                        -29%
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                        data-product-id="product-003"
+                        aria-label="Add Smart Watch to wishlist"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/smart-watch">
+                        <span class="product-placeholder">
+                            ⌚
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/smart-watch"
+                        class="product-title"
+                    >
+                        Smart Watch
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>
+                            (214)
+                        </span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳2,499
+                    </div>
+
+                    <div class="product-old-price">
+                        ৳3,500
+                    </div>
+
+                    <div class="product-meta">
+
+                        <span>
+                            782 sold
+                        </span>
+
+                        <span>
+                            31 left
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="product-003"
+                        data-product-name="Smart Watch"
+                        data-product-price="2499"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT -->
+
+            <article
+                class="product-card"
+                data-product-id="product-004"
+                data-category="fashion"
+                data-price="1999"
+            >
+
+                <div class="product-media">
+
+                    <span class="discount-badge">
+                        -29%
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                        data-product-id="product-004"
+                        aria-label="Add Sports Shoes to wishlist"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/sports-shoes">
+                        <span class="product-placeholder">
+                            👟
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/sports-shoes"
+                        class="product-title"
+                    >
+                        Sports Shoes
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐☆
+                        <span>
+                            (87)
+                        </span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳1,999
+                    </div>
+
+                    <div class="product-old-price">
+                        ৳2,800
+                    </div>
+
+                    <div class="product-meta">
+
+                        <span>
+                            341 sold
+                        </span>
+
+                        <span>
+                            18 left
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="product-004"
+                        data-product-name="Sports Shoes"
+                        data-product-price="1999"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BEST SELLING
+========================================================= -->
+
+<section
+    class="content-section"
+    id="best-selling"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    POPULAR NOW
+                </span>
+
+                <h2>
+                    ⭐ Best Selling
+                </h2>
+
+            </div>
+
+            <a href="/products?sort=best-selling">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div
+            class="product-grid"
+            id="bestSellingProducts"
+        >
+         <!-- PRODUCT CARDS -->
+
+            <article
+                class="product-card"
+                data-product-id="best-001"
+            >
+
+                <div class="product-media">
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/premium-phone">
+                        <span class="product-placeholder">
+                            📱
+                        </span>
+                    </a>
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/premium-phone"
+                        class="product-title"
+                    >
+                        Premium Phone
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(324)</span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳25,999
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="best-001"
+                        data-product-name="Premium Phone"
+                        data-product-price="25999"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article
+                class="product-card"
+                data-product-id="best-002"
+            >
+
+                <div class="product-media">
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/business-laptop">
+                        <span class="product-placeholder">
+                            💻
+                        </span>
+                    </a>
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/business-laptop"
+                        class="product-title"
+                    >
+                        Business Laptop
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(189)</span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳55,999
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="best-002"
+                        data-product-name="Business Laptop"
+                        data-product-price="55999"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article
+                class="product-card"
+                data-product-id="best-003"
+            >
+
+                <div class="product-media">
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/premium-earbuds">
+                        <span class="product-placeholder">
+                            🎧
+                        </span>
+                    </a>
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/premium-earbuds"
+                        class="product-title"
+                    >
+                        Premium Earbuds
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(276)</span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳2,999
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="best-003"
+                        data-product-name="Premium Earbuds"
+                        data-product-price="2999"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article
+                class="product-card"
+                data-product-id="best-004"
+            >
+
+                <div class="product-media">
+                    <button
+                        type="button"
+                        class="wishlist-button"
+                    >
+                        ♡
+                    </button>
+
+                    <a href="/product/gaming-controller">
+                        <span class="product-placeholder">
+                            🎮
+                        </span>
+                    </a>
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/gaming-controller"
+                        class="product-title"
+                    >
+                        Gaming Controller
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐☆
+                        <span>(143)</span>
+                    </div>
+
+                    <div class="product-price">
+                        ৳3,499
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-id="best-004"
+                        data-product-name="Gaming Controller"
+                        data-product-price="3499"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VOUCHERS
+========================================================= -->
+
+<section
+    class="content-section"
+    id="vouchers"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    SAVE MORE
+                </span>
+
+                <h2>
+                    🎟️ Vouchers & Coupons
+                </h2>
+
+            </div>
+
+            <a href="/vouchers">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div class="voucher-grid">
+
+
+            <article class="voucher-card">
+
+                <div class="voucher-discount">
+                    ৳100 OFF
+                </div>
+
+                <div class="voucher-info">
+
+                    <strong>
+                        New Customer
+                    </strong>
+
+                    <span>
+                        Min. spend ৳1,000
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    data-voucher="WELCOME100"
+                >
+                    Collect
+                </button>
+
+            </article>
+
+
+            <article class="voucher-card">
+
+                <div class="voucher-discount">
+                    10% OFF
+                </div>
+
+                <div class="voucher-info">
+
+                    <strong>
+                        Electronics
+                    </strong>
+
+                    <span>
+                        Up to ৳500 discount
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    data-voucher="TECH10"
+                >
+                    Collect
+                </button>
+
+            </article>
+
+
+            <article class="voucher-card">
+
+                <div class="voucher-discount">
+                    15% OFF
+                </div>
+
+                <div class="voucher-info">
+
+                    <strong>
+                        Fashion
+                    </strong>
+
+                    <span>
+                        Limited time offer
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    data-voucher="STYLE15"
+                >
+                    Collect
+                </button>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     NEW ARRIVALS
+========================================================= -->
+
+<section
+    class="content-section"
+    id="new-arrivals"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    JUST ARRIVED
+                </span>
+
+                <h2>
+                    ✨ New Arrivals
+                </h2>
+
+            </div>
+
+            <a href="/products?sort=newest">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div
+            class="product-grid"
+            id="newArrivalProducts"
+        >
+
+            <article class="product-card">
+
+                <div class="product-media">
+                    <span class="new-badge">
+                        NEW
+                    </span>
+
+                    <a href="/product/travel-backpack">
+                        <span class="product-placeholder">
+                            🎒
+                        </span>
+                    </a>
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/travel-backpack"
+                        class="product-title"
+                    >
+                        Travel Backpack
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-price">
+                        ৳2,199
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-name="Travel Backpack"
+                        data-product-price="2199"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <div class="product-media">
+
+                    <span class="new-badge">
+                        NEW
+                    </span>
+
+                    <a href="/product/premium-tshirt">
+                        <span class="product-placeholder">
+                            👕
+                        </span>
+                    </a>
+
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/premium-tshirt"
+                        class="product-title"
+                    >
+                        Premium T-Shirt
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐☆
+                    </div>
+
+                    <div class="product-price">
+                        ৳799
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-name="Premium T-Shirt"
+                        data-product-price="799"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <div class="product-media">
+
+                    <span class="new-badge">
+                        NEW
+                    </span>
+
+                    <a href="/product/smart-led-light">
+                        <span class="product-placeholder">
+                            💡
+                        </span>
+                    </a>
+
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/smart-led-light"
+                        class="product-title"
+                    >
+                        Smart LED Light
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-price">
+                        ৳1,299
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-name="Smart LED Light"
+                        data-product-price="1299"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+                <div class="product-media">
+
+                    <span class="new-badge">
+                        NEW
+                    </span>
+
+                    <a href="/product/office-chair">
+                        <span class="product-placeholder">
+                            🪑
+                        </span>
+                    </a>
+
+                </div>
+
+                <div class="product-details">
+
+                    <a
+                        href="/product/office-chair"
+                        class="product-title"
+                    >
+                        Modern Office Chair
+                    </a>
+
+                    <div class="product-rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-price">
+                        ৳7,999
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart"
+                        data-action="add-to-cart"
+                        data-product-name="Modern Office Chair"
+                        data-product-price="7999"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RECOMMENDED
+========================================================= -->
+
+<section
+    class="content-section"
+    id="recommended"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    PERSONALIZED
+                </span>
+
+                <h2>
+                    ❤️ Just For You
+                </h2>
+
+            </div>
+
+            <a href="/recommended">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div
+            class="product-grid"
+            id="recommendedProducts"
+        >
+
+            <!-- JS/API can populate personalized products here -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURED SHOPS
+========================================================= -->
+
+<section
+    class="content-section"
+    id="featured-shops"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    TRUSTED STORES
+                </span>
+
+                <h2>
+                    🏪 Featured Shops
+                </h2>
+
+            </div>
+
+            <a href="/shops">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div class="shop-grid">
+
+
+            <a
+                href="/shop/tech-world"
+                class="shop-card"
+                data-shop-id="shop-001"
+            >
+
+                <div class="shop-logo">
+                    📱
+                </div>
+
+                <div class="shop-info">
+
+                    <h3>
+                        Tech World
+                    </h3>
+
+                    <span>
+                        ⭐ 4.8
+                    </span>
+
+                    <small>
+                        Electronics
+                    </small>
+
+                </div>
+
+                <span class="shop-link">
+                    Visit Shop →
+                </span>
+
+            </a>
+
+
+            <a
+                href="/shop/fashion-house"
+                class="shop-card"
+                data-shop-id="shop-002"
+            >
+
+                <div class="shop-logo">
+                    👕
+                </div>
+
+                <div class="shop-info">
+
+                    <h3>
+                        Fashion House
+                    </h3>
+
+                    <span>
+                        ⭐ 4.7
+                    </span>
+
+                    <small>
+                        Fashion
+                    </small>
+
+                </div>
+
+                <span class="shop-link">
+                    Visit Shop →
+                </span>
+
+            </a>
+
+
+            <a
+                href="/shop/home-store"
+                class="shop-card"
+                data-shop-id="shop-003"
+            >
+
+                <div class="shop-logo">
+                    🏠
+                </div>
+
+                <div class="shop-info">
+
+                    <h3>
+                        Home Store
+                    </h3>
+
+                    <span>
+                        ⭐ 4.9
+                    </span>
+
+                    <small>
+                        Home & Living
+                    </small>
+
+                </div>
+
+                <span class="shop-link">
+                    Visit Shop →
+                </span>
+
+            </a>
+
+
+            <a
+                href="/shop/gaming-zone"
+                class="shop-card"
+                data-shop-id="shop-004"
+            >
+
+                <div class="shop-logo">
+                    🎮
+                </div>
+
+                <div class="shop-info">
+
+                    <h3>
+                        Gaming Zone
+                    </h3>
+
+                    <span>
+                        ⭐ 4.8
+                    </span>
+
+                    <small>
+                        Gaming
+                    </small>
+
+                </div>
+
+                <span class="shop-link">
+                    Visit Shop →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     DEALS / PROMOTIONS
+========================================================= -->
+
+<section
+    class="content-section"
+    id="deals"
+>
+
+    <div class="container">
+
+        <header class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    SPECIAL OFFERS
+                </span>
+
+                <h2>
+                    💥 Today's Deals
+                </h2>
+
+            </div>
+
+            <a href="/deals">
+                View All →
+            </a>
+
+        </header>
+
+
+        <div class="deal-grid">
+
+
+            <a
+                href="/deals/electronics"
+                class="deal-banner"
+            >
+
+                <span>
+                    📱
+                </span>
+
+                <div>
+
+                    <strong>
+                        Electronics Deals
+                    </strong>
+
+                    <small>
+                        Up to 40% OFF
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="/deals/fashion"
+                class="deal-banner"
+            >
+
+                <span>
+                    👕
+                </span>
+
+                <div>
+
+                    <strong>
+                        Fashion Deals
+                    </strong>
+
+                    <small>
+                        Up to 50% OFF
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="/deals/home"
+                class="deal-banner"
+            >
+
+                <span>
+                    🏠
+                </span>
+
+                <div>
+
+                    <strong>
+                        Home Deals
+                    </strong>
+
+                    <small>
+                        Save up to ৳2,000
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BECOME A SELLER
+========================================================= -->
+
+<section
+    class="seller-cta"
+    id="become-seller"
+>
+
+    <div class="container seller-cta-inner">
+
+        <div>
+
+            <span>
+                MYSHOP SELLER
+            </span>
+
+            <h2>
+                Grow Your Business With MyShop
+            </h2>
+
+            <p>
+                Reach thousands of customers and manage
+                your online store from one place.
+            </p>
+
+        </div>
+
+
+        <div class="seller-actions">
+
+            <a
+                href="/seller/register"
+                class="primary-button"
+            >
+                Become a Seller →
+            </a>
+
+            <a
+                href="/seller/learn"
+                class="secondary-button"
+            >
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INFORMATION / TRUST
+========================================================= -->
+
+<section
+    class="information-section"
+    id="help"
+>
+
+    <div class="container information-grid">
+
+
+        <div class="information-card">
+
+            <span>
+                🔐
+            </span>
+
+            <h3>
+                Secure Shopping
+            </h3>
+
+            <p>
+                Your account and order information
+                are protected.
+            </p>
+
+        </div>
+
+
+        <div class="information-card">
+
+            <span>
+                💳
+            </span>
+
+            <h3>
+                Multiple Payments
+            </h3>
+
+            <p>
+                Choose your preferred payment method
+                during checkout.
+            </p>
+
+        </div>
+
+
+        <div class="information-card">
+
+            <span>
+                📦
+            </span>
+
+            <h3>
+                Order Tracking
+            </h3>
+
+            <p>
+                Track your order from purchase
+                to delivery.
+            </p>
+
+        </div>
+
+
+        <div class="information-card">
+
+            <span>
+                💬
+            </span>
+
+            <h3>
+                Customer Support
+            </h3>
+
+            <p>
+                Get help whenever you need it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+    class="site-footer"
+>
+
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-column">
+
+            <a
+                href="/"
+                class="footer-logo"
+            >
+                MyShop
+            </a>
+
+            <p>
+                Your trusted online marketplace.
+            </p>
+
+
+            <div class="social-links">
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                >
+                    Facebook
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="YouTube"
+                >
+                    YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOMER SERVICE -->
+
+        <div class="footer-column">
+
+            <h3>
+                Customer Service
+            </h3>
+
+            <a href="/help">
+                Help Center
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/returns">
+                Returns & Refunds
+            </a>
+
+            <a href="/shipping">
+                Shipping Information
+            </a>
+
+            <a href="/payment">
+                Payment Methods
+            </a>
+
+        </div>
+
+
+        <!-- ACCOUNT -->
+
+        <div class="footer-column">
+
+            <h3>
+                My Account
+            </h3>
+
+            <a href="/profile">
+                My Profile
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/wishlist">
+                Wishlist
+            </a>
+
+            <a href="/vouchers">
+                My Vouchers
+            </a>
+
+            <a href="/notifications">
+                Notifications
+            </a>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column">
+
+            <h3>
+                About MyShop
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/careers">
+                Careers
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms & Conditions
+            </a>
+
+            <a href="/seller-policy">
+                Seller Policy
+            </a>
+
+        </div>
+
+
+        <!-- SELLER -->
+
+        <div class="footer-column">
+
+            <h3>
+                Sell on MyShop
+            </h3>
+
+            <a href="/seller/register">
+                Become a Seller
+            </a>
+
+            <a href="/seller/dashboard">
+                Seller Center
+            </a>
+
+            <a href="/seller/policy">
+                Seller Policy
+            </a>
+
+            <a href="/seller/help">
+                Seller Help
+            </a>
+
+        </div>
+
+
+        <!-- APP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Get the MyShop App
+            </h3>
+
+            <p>
+                Shop faster and manage your orders
+                from anywhere.
+            </p>
+
+            <div class="app-downloads">
+
+                <a href="#">
+                    📱 App Store
+                </a>
+
+                <a href="#">
+                    ▶ Google Play
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 MyShop. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     CART DRAWER
+========================================================= -->
+
+<aside
+    id="cartDrawer"
+    class="cart-drawer"
+    aria-label="Shopping cart"
+    hidden
+>
+
+    <div class="cart-header">
+
+        <h2>
+            🛒 Your Cart
+        </h2>
+
+        <button
+            type="button"
+            id="closeCart"
+            aria-label="Close cart"
+        >
+            ✕
+        </button>
+
+    </div>
+
+
+    <div
+        id="cartItems"
+        class="cart-items"
+    >
+        <!-- Dynamic cart items -->
+    </div>
+
+
+    <div class="cart-empty" hidden>
+
+        <span>
+            🛒
+        </span>
+
+        <h3>
+            Your cart is empty
+        </h3>
+
+        <p>
+            Add products to your cart to continue.
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-subtotal">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong id="cartSubtotal">
+                ৳0
+            </strong>
+
+        </div>
+
+
+        <a
+            href="/checkout"
+            class="primary-button"
+        >
+            Checkout →
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     QUICK VIEW
+========================================================= -->
+
+<div
+    id="quickViewModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quickViewTitle"
+    hidden
+>
+
+    <div class="modal-overlay"></div>
+
+
+    <div class="modal-content">
+
+        <button
+            type="button"
+            class="modal-close"
+            aria-label="Close"
+        >
+            ✕
+        </button>
+
+
+        <div
+            id="quickViewContent"
+            class="quick-view-content"
+        >
+
+            <!-- Dynamic product information -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGIN / ACCOUNT MODAL
+========================================================= -->
+
+<div
+    id="loginModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    hidden
+>
+
+    <div class="modal-overlay"></div>
+
+
+    <div class="modal-content">
+
+        <button
+            type="button"
+            class="modal-close"
+            aria-label="Close login"
+        >
+            ✕
+        </button>
+
+
+        <h2>
+            Login to MyShop
+        </h2>
+
+
+        <form
+            id="loginForm"
+            action="/login"
+            method="POST"
+        >
+
+            <label for="loginIdentifier">
+                Email or Phone
+            </label>
+
+            <input
+                type="text"
+                id="loginIdentifier"
+                name="identifier"
+                required
+            >
+
+
+            <label for="loginPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <div class="account-links">
+
+            <a href="/forgot-password">
+                Forgot Password?
+            </a>
+
+            <a href="/register">
+                Create New Account
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     NOTIFICATION CONTAINER
+========================================================= -->
+
+<div
+    id="notificationContainer"
+    class="notification-container"
+    aria-live="polite"
+    aria-atomic="true"
+>
+</div>
+
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+========================================================= -->
+
+<nav
+    class="mobile-bottom-navigation"
+    aria-label="Mobile navigation"
+>
+
+
+    <a
+        href="/"
+        class="mobile-nav-item active"
+    >
+
+        <span>
+            🏠
+        </span>
+
+        <small>
+            Home
+        </small>
+
+    </a>
+
+
+    <a
+        href="/categories"
+        class="mobile-nav-item"
+    >
+
+        <span>
+            📂
+        </span>
+
+        <small>
+            Categories
+        </small>
+
+    </a>
+
+
+    <a
+        href="/cart"
+        class="mobile-nav-item"
+    >
+
+        <span>
+            🛒
+        </span>
+
+        <small>
+            Cart
+        </small>
+
+        <b id="mobileCartCount">
+            0
+        </b>
+
+    </a>
+
+
+    <a
+        href="/wishlist"
+        class="mobile-nav-item"
+    >
+
+        <span>
+            ❤️
+        </span>
+
+        <small>
+            Wishlist
+        </small>
+
+    </a>
+
+
+    <a
+        href="/profile"
+        class="mobile-nav-item"
+    >
+
+        <span>
+            👤
+        </span>
+
+        <small>
+            Account
+        </small>
+
+    </a>
+
+</nav>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+    src="js/app.js"
+    defer
+></script>
+
+
+</body>
+
+</html>
