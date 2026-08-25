@@ -1,0 +1,5320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT CONFIGURATION
+         ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MyShop - Your trusted online marketplace. Discover thousands of products from trusted sellers."
+    >
+
+    <meta
+        name="keywords"
+        content="MyShop, online shopping, marketplace, ecommerce, Bangladesh, products"
+    >
+
+    <meta
+        name="author"
+        content="MyShop"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f85606"
+    >
+
+
+    <!-- =====================================================
+         PAGE TITLE
+         ===================================================== -->
+
+    <title>
+        MyShop - Online Marketplace
+    </title>
+
+
+    <!-- =====================================================
+         FONTS
+         ===================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         MAIN CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/images/favicon.png"
+    >
+
+
+    <!-- =====================================================
+         OPEN GRAPH
+         ===================================================== -->
+
+    <meta
+        property="og:title"
+        content="MyShop - Online Marketplace"
+    >
+
+    <meta
+        property="og:description"
+        content="Discover thousands of products from trusted sellers."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:site_name"
+        content="MyShop"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ACCESSIBILITY
+         ===================================================== -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to main content
+    </a>
+
+
+    <!-- =====================================================
+         APPLICATION ROOT
+         ===================================================== -->
+
+    <div
+        id="app"
+        class="app"
+        data-app="myshop"
+    >
+
+
+        <!-- =================================================
+             GLOBAL NETWORK STATUS
+             ================================================= -->
+
+        <div
+            id="networkStatus"
+            class="network-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+        ></div>
+
+
+        <!-- =================================================
+             GLOBAL TOAST CONTAINER
+             ================================================= -->
+
+        <div
+            id="toastContainer"
+            class="toast-container"
+            aria-live="polite"
+            aria-atomic="true"
+        ></div>
+
+
+        <!-- =================================================
+             HEADER START
+             ================================================= -->
+
+        <header
+            id="site-header"
+            class="header"
+            role="banner"
+        >
+
+            <div class="top-bar">
+
+
+                <!-- =========================================
+                     BRAND LOGO
+                     ========================================= -->
+
+                <a
+                    href="#"
+                    class="logo"
+                    aria-label="MyShop Home"
+                >
+
+                    My<span>Shop</span>
+
+                </a>
+
+
+                <!-- =========================================
+                     SEARCH BOX
+                     ========================================= -->
+
+                <div
+                    class="search-box"
+                    role="search"
+                >
+
+                    <label
+                        for="searchInput"
+                        class="sr-only"
+                    >
+                        Search products
+                    </label>
+
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        name="search"
+                        placeholder="Search products..."
+                        autocomplete="off"
+                        aria-label="Search products"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="searchButton"
+                        onclick="searchProduct()"
+                        aria-label="Search"
+                    >
+                        🔍
+                    </button>
+
+                </div>
+
+
+                <!-- =========================================
+                     HEADER ACTIONS
+                     ========================================= -->
+
+                <div
+                    class="header-actions"
+                    aria-label="Account and shopping actions"
+                >
+
+
+                    <!-- WISHLIST -->
+
+                    <button
+                        type="button"
+                        class="header-action wishlist-action"
+                        data-wishlist-toggle="header"
+                        aria-label="Wishlist"
+                        aria-pressed="false"
+                        title="Wishlist"
+                    >
+
+                        ♡
+
+                        <span
+                            class="action-count"
+                            data-wishlist-count
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- NOTIFICATIONS -->
+
+                    <button
+                        type="button"
+                        class="header-action notification-action"
+                        data-open-notifications
+                        aria-label="Notifications"
+                        title="Notifications"
+                    >
+
+                        🔔
+
+                        <span
+                            class="action-count"
+                            data-notification-count
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- CART -->
+
+                    <button
+                        type="button"
+                        class="header-action cart-action"
+                        onclick="openCart()"
+                        aria-label="Shopping cart"
+                        title="Shopping cart"
+                    >
+
+                        🛒
+
+                        <span
+                            id="cartCount"
+                            class="action-count"
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- ACCOUNT -->
+
+                    <button
+                        type="button"
+                        class="header-action account-action"
+                        onclick="openLogin()"
+                        aria-label="Account"
+                        title="Login"
+                    >
+
+                        👤
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 MAIN NAVIGATION
+                 ============================================= -->
+
+            <nav
+                id="main-navigation"
+                class="navigation"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="#"
+                    data-scroll-target="hero"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="#categories"
+                    data-scroll-target="categories"
+                >
+                    Categories
+                </a>
+
+
+                <a
+                    href="#flash-sale"
+                    data-scroll-target="flash-sale"
+                >
+                    Flash Sale
+                </a>
+
+
+                <a
+                    href="#best-selling"
+                    data-scroll-target="best-selling"
+                >
+                    Best Selling
+                </a>
+
+
+                <a
+                    href="#new-arrivals"
+                    data-scroll-target="new-arrivals"
+                >
+                    New Arrivals
+                </a>
+
+
+                <a
+                    href="#seller"
+                    data-seller-action
+                >
+                    Become a Seller
+                </a>
+
+            </nav>
+
+        </header>
+
+        <!-- =================================================
+             HEADER END
+             ================================================= -->
+
+
+        <!-- =================================================
+             MAIN CONTENT START
+             ================================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+                      <!-- =================================================
+                 HERO SECTION
+                 ================================================= -->
+
+            <section
+                id="hero"
+                class="hero"
+                aria-labelledby="hero-title"
+            >
+
+                <div class="hero-content">
+
+                    <p class="small-title">
+                        WELCOME TO MYSHOP
+                    </p>
+
+
+                    <h1 id="hero-title">
+
+                        Everything You Need,<br>
+                        All in One Place
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Discover thousands of products
+                        from trusted sellers.
+
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="shop-btn"
+                        data-scroll-target="categories"
+                    >
+                        Shop Now →
+                    </button>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div
+                    class="hero-visual"
+                    aria-hidden="true"
+                >
+
+                    <div
+                        class="hero-decoration hero-decoration-one"
+                    ></div>
+
+
+                    <div
+                        class="hero-decoration hero-decoration-two"
+                    ></div>
+
+
+                    <div class="hero-shopping-icon">
+                        🛍️
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUICK SHOPPING FEATURES
+                 ================================================= -->
+
+            <section
+                class="quick-features"
+                aria-label="MyShop benefits"
+            >
+
+                <div class="quick-feature">
+
+                    <div
+                        class="quick-feature-icon"
+                        aria-hidden="true"
+                    >
+                        🚚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Fast Delivery
+                        </h3>
+
+                        <p>
+                            Get your orders delivered quickly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-feature">
+
+                    <div
+                        class="quick-feature-icon"
+                        aria-hidden="true"
+                    >
+                        🔒
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Secure Shopping
+                        </h3>
+
+                        <p>
+                            Your shopping experience stays protected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-feature">
+
+                    <div
+                        class="quick-feature-icon"
+                        aria-hidden="true"
+                    >
+                        💳
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Easy Payment
+                        </h3>
+
+                        <p>
+                            Multiple convenient payment options.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-feature">
+
+                    <div
+                        class="quick-feature-icon"
+                        aria-hidden="true"
+                    >
+                        🔄
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Easy Returns
+                        </h3>
+
+                        <p>
+                            Shop confidently with easy returns.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 HERO PROMOTIONAL CARDS
+                 ================================================= -->
+
+            <section
+                class="promo-strip"
+                aria-label="Shopping promotions"
+            >
+
+                <article
+                    class="promo-card promo-card-primary"
+                >
+
+                    <div class="promo-content">
+
+                        <span class="promo-label">
+                            SPECIAL OFFER
+                        </span>
+
+                        <h2>
+                            Save More on Your
+                            Favourite Products
+                        </h2>
+
+                        <p>
+                            Discover exclusive deals
+                            available on MyShop.
+                        </p>
+
+                        <button
+                            type="button"
+                            data-scroll-target="flash-sale"
+                        >
+                            Explore Deals →
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="promo-icon"
+                        aria-hidden="true"
+                    >
+                        🛍️
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="promo-card promo-card-secondary"
+                >
+
+                    <div class="promo-content">
+
+                        <span class="promo-label">
+                            NEW ARRIVALS
+                        </span>
+
+                        <h2>
+                            Fresh Products,
+                            New Every Day
+                        </h2>
+
+                        <p>
+                            Check out the latest products
+                            from our sellers.
+                        </p>
+
+                        <button
+                            type="button"
+                            data-scroll-target="new-arrivals"
+                        >
+                            Shop New Arrivals →
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="promo-icon"
+                        aria-hidden="true"
+                    >
+                        ✨
+                    </div>
+
+                </article>
+
+            </section>
+
+                      <!-- =================================================
+                 CATEGORIES SECTION
+                 PART 2A
+                 ================================================= -->
+
+            <section
+                id="categories"
+                class="section categories-section"
+                aria-labelledby="categories-title"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            SHOP BY CATEGORY
+                        </p>
+
+                        <h2 id="categories-title">
+                            Categories
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="view-all"
+                        data-category="all"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="category-grid"
+                    role="list"
+                >
+
+
+                    <!-- ELECTRONICS -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Electronics"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            📱
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Electronics
+                            </h3>
+
+                            <p>
+                                Phones, gadgets & more
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- FASHION -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Fashion"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            👕
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Fashion
+                            </h3>
+
+                            <p>
+                                Clothing & accessories
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- HOME & LIVING -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Home & Living"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            🏠
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Home & Living
+                            </h3>
+
+                            <p>
+                                Make your home better
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- BEAUTY -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Beauty"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            💄
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Beauty
+                            </h3>
+
+                            <p>
+                                Beauty & personal care
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- GAMING -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Gaming"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            🎮
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Gaming
+                            </h3>
+
+                            <p>
+                                Games & gaming gear
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- BOOKS -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Books"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            📚
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Books
+                            </h3>
+
+                            <p>
+                                Books & learning
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- SPORTS -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Sports"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            ⚽
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Sports
+                            </h3>
+
+                            <p>
+                                Sports & fitness
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- GROCERY -->
+
+                    <a
+                        href="#"
+                        class="category"
+                        data-category="Grocery"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="category-icon"
+                            aria-hidden="true"
+                        >
+                            🛒
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>
+                                Grocery
+                            </h3>
+
+                            <p>
+                                Everyday essentials
+                            </p>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 CATEGORY DISCOVERY / QUICK FILTER AREA
+                 PART 2B
+                 ================================================= -->
+
+            <section
+                class="category-discovery"
+                aria-label="Popular category shortcuts"
+            >
+
+                <div class="category-discovery-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            QUICK DISCOVERY
+                        </p>
+
+                        <h2>
+                            What are you looking for?
+                        </h2>
+
+                    </div>
+
+                    <p class="category-discovery-description">
+                        Explore popular shopping categories
+                        and find products faster.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="category-pills"
+                    role="list"
+                    aria-label="Popular categories"
+                >
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Electronics"
+                        role="listitem"
+                    >
+                        📱 Electronics
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Fashion"
+                        role="listitem"
+                    >
+                        👕 Fashion
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Home & Living"
+                        role="listitem"
+                    >
+                        🏠 Home & Living
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Beauty"
+                        role="listitem"
+                    >
+                        💄 Beauty
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Gaming"
+                        role="listitem"
+                    >
+                        🎮 Gaming
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Books"
+                        role="listitem"
+                    >
+                        📚 Books
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Sports"
+                        role="listitem"
+                    >
+                        ⚽ Sports
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-pill"
+                        data-category="Grocery"
+                        role="listitem"
+                    >
+                        🛒 Grocery
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CATEGORY PROMOTIONAL BANNER
+                 ================================================= -->
+
+            <section
+                class="category-promo"
+                aria-label="Category promotion"
+            >
+
+                <div class="category-promo-content">
+
+                    <span class="promo-label">
+                        SHOP SMART
+                    </span>
+
+                    <h2>
+                        Discover More,
+                        Save More
+                    </h2>
+
+                    <p>
+                        Browse products across multiple
+                        categories from trusted sellers.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="promo-action"
+                        data-scroll-target="flash-sale"
+                    >
+                        See Today's Deals →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="category-promo-icons"
+                    aria-hidden="true"
+                >
+
+                    <span>
+                        📱
+                    </span>
+
+                    <span>
+                        👟
+                    </span>
+
+                    <span>
+                        🎧
+                    </span>
+
+                    <span>
+                        ⌚
+                    </span>
+
+                    <span>
+                        💄
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION DIVIDER
+                 ================================================= -->
+
+            <div
+                class="section-divider"
+                aria-hidden="true"
+            ></div>
+                        <!-- =================================================
+                 FLASH SALE SECTION
+                 PART 3A / 20
+                 ================================================= -->
+
+            <section
+                id="flash-sale"
+                class="section flash-sale-section"
+                aria-labelledby="flash-sale-title"
+            >
+
+                <!-- =============================================
+                     FLASH SALE HEADER
+                     ============================================= -->
+
+                <div class="section-header sale-header">
+
+                    <div class="sale-title-area">
+
+                        <p class="section-eyebrow">
+                            LIMITED TIME OFFER
+                        </p>
+
+                        <h2 id="flash-sale-title">
+                            🔥 Flash Sale
+                        </h2>
+
+                    </div>
+
+
+                    <!-- COUNTDOWN -->
+
+                    <div
+                        class="timer"
+                        role="timer"
+                        aria-live="polite"
+                        aria-label="Flash sale countdown"
+                    >
+
+                        <span class="timer-label">
+                            Ends in
+                        </span>
+
+                        <strong id="timer">
+                            05:00:00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- VIEW ALL -->
+
+                    <a
+                        href="#"
+                        class="view-all sale-view-all"
+                        data-sale-action="view-all"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     SALE STATUS BAR
+                     ============================================= -->
+
+                <div
+                    class="sale-status-bar"
+                    aria-live="polite"
+                >
+
+                    <div class="sale-status-item">
+
+                        <span
+                            class="sale-status-icon"
+                            aria-hidden="true"
+                        >
+                            ⚡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Flash Deals
+                            </strong>
+
+                            <span>
+                                Limited quantities available
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sale-status-item">
+
+                        <span
+                            class="sale-status-icon"
+                            aria-hidden="true"
+                        >
+                            💰
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Big Savings
+                            </strong>
+
+                            <span>
+                                Special prices for a limited time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sale-status-item">
+
+                        <span
+                            class="sale-status-icon"
+                            aria-hidden="true"
+                        >
+                            🚚
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Fast Delivery
+                            </strong>
+
+                            <span>
+                                Get your orders delivered quickly
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     PRODUCT GRID START
+                     ============================================= -->
+
+                <div
+                    class="product-grid flash-sale-products"
+                    id="productGrid"
+                    data-product-list="flash-sale"
+                >
+
+                    <!--
+                        Flash-sale product cards continue
+                        in Part 3B.
+                    -->
+                                      <!-- =========================================
+                         PRODUCT 1
+                         ========================================= -->
+
+                    <article
+                        class="product-card"
+                        data-product-card
+                        data-product-id="smartphone-pro"
+                        data-category="Electronics"
+                    >
+
+                        <div class="product-image">
+
+                            <span
+                                class="product-emoji"
+                                aria-hidden="true"
+                            >
+                                📱
+                            </span>
+
+                            <span class="sale-badge">
+                                -14%
+                            </span>
+
+                            <button
+                                type="button"
+                                class="product-wishlist"
+                                data-wishlist-toggle="smartphone-pro"
+                                aria-label="Add Smartphone Pro to wishlist"
+                                aria-pressed="false"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <p class="product-category">
+                                Electronics
+                            </p>
+
+                            <h3>
+                                Smartphone Pro
+                            </h3>
+
+                            <div
+                                class="rating"
+                                aria-label="5 out of 5 stars"
+                            >
+                                ⭐⭐⭐⭐⭐
+                                <span>
+                                    (128)
+                                </span>
+                            </div>
+
+                            <div class="price">
+                                ৳18,999
+                            </div>
+
+                            <div class="old-price">
+                                ৳22,000
+                            </div>
+
+                            <div class="product-meta">
+
+                                <span>
+                                    Free Delivery
+                                </span>
+
+                                <span>
+                                    86 sold
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="add-cart"
+                                data-add-to-cart
+                                onclick="addToCart('Smartphone Pro',18999)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =========================================
+                         PRODUCT 2
+                         ========================================= -->
+
+                    <article
+                        class="product-card"
+                        data-product-card
+                        data-product-id="wireless-headphone"
+                        data-category="Electronics"
+                    >
+
+                        <div class="product-image">
+
+                            <span
+                                class="product-emoji"
+                                aria-hidden="true"
+                            >
+                                🎧
+                            </span>
+
+                            <span class="sale-badge">
+                                -25%
+                            </span>
+
+                            <button
+                                type="button"
+                                class="product-wishlist"
+                                data-wishlist-toggle="wireless-headphone"
+                                aria-label="Add Wireless Headphone to wishlist"
+                                aria-pressed="false"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <p class="product-category">
+                                Electronics
+                            </p>
+
+                            <h3>
+                                Wireless Headphone
+                            </h3>
+
+                            <div
+                                class="rating"
+                                aria-label="4 out of 5 stars"
+                            >
+                                ⭐⭐⭐⭐☆
+                                <span>
+                                    (94)
+                                </span>
+                            </div>
+
+                            <div class="price">
+                                ৳1,499
+                            </div>
+
+                            <div class="old-price">
+                                ৳2,000
+                            </div>
+
+                            <div class="product-meta">
+
+                                <span>
+                                    Free Delivery
+                                </span>
+
+                                <span>
+                                    143 sold
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="add-cart"
+                                data-add-to-cart
+                                onclick="addToCart('Wireless Headphone',1499)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =========================================
+                         PRODUCT 3
+                         ========================================= -->
+
+                    <article
+                        class="product-card"
+                        data-product-card
+                        data-product-id="smart-watch"
+                        data-category="Electronics"
+                    >
+
+                        <div class="product-image">
+
+                            <span
+                                class="product-emoji"
+                                aria-hidden="true"
+                            >
+                                ⌚
+                            </span>
+
+                            <span class="sale-badge">
+                                -29%
+                            </span>
+
+                            <button
+                                type="button"
+                                class="product-wishlist"
+                                data-wishlist-toggle="smart-watch"
+                                aria-label="Add Smart Watch to wishlist"
+                                aria-pressed="false"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <p class="product-category">
+                                Electronics
+                            </p>
+
+                            <h3>
+                                Smart Watch
+                            </h3>
+
+                            <div
+                                class="rating"
+                                aria-label="5 out of 5 stars"
+                            >
+                                ⭐⭐⭐⭐⭐
+                                <span>
+                                    (211)
+                                </span>
+                            </div>
+
+                            <div class="price">
+                                ৳2,499
+                            </div>
+
+                            <div class="old-price">
+                                ৳3,500
+                            </div>
+
+                            <div class="product-meta">
+
+                                <span>
+                                    Free Delivery
+                                </span>
+
+                                <span>
+                                    192 sold
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="add-cart"
+                                data-add-to-cart
+                                onclick="addToCart('Smart Watch',2499)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =========================================
+                         PRODUCT 4
+                         ========================================= -->
+
+                    <article
+                        class="product-card"
+                        data-product-card
+                        data-product-id="sports-shoes"
+                        data-category="Fashion"
+                    >
+
+                        <div class="product-image">
+
+                            <span
+                                class="product-emoji"
+                                aria-hidden="true"
+                            >
+                                👟
+                            </span>
+
+                            <span class="sale-badge">
+                                -29%
+                            </span>
+
+                            <button
+                                type="button"
+                                class="product-wishlist"
+                                data-wishlist-toggle="sports-shoes"
+                                aria-label="Add Sports Shoes to wishlist"
+                                aria-pressed="false"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <p class="product-category">
+                                Fashion
+                            </p>
+
+                            <h3>
+                                Sports Shoes
+                            </h3>
+
+                            <div
+                                class="rating"
+                                aria-label="4 out of 5 stars"
+                            >
+                                ⭐⭐⭐⭐☆
+                                <span>
+                                    (76)
+                                </span>
+                            </div>
+
+                            <div class="price">
+                                ৳1,999
+                            </div>
+
+                            <div class="old-price">
+                                ৳2,800
+                            </div>
+
+                            <div class="product-meta">
+
+                                <span>
+                                    Free Delivery
+                                </span>
+
+                                <span>
+                                    117 sold
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="add-cart"
+                                data-add-to-cart
+                                onclick="addToCart('Sports Shoes',1999)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- =============================================
+                     SALE FOOTER
+                     ============================================= -->
+
+                <div class="sale-footer">
+
+                    <p>
+                        Don't miss these limited-time offers.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="sale-more-btn"
+                        data-sale-action="view-all"
+                    >
+                        View More Deals →
+                    </button>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 PRODUCT DISCOVERY SECTION
+                 PART 4A / 20
+                 ================================================= -->
+
+            <section
+                id="product-discovery"
+                class="section product-discovery-section"
+                aria-labelledby="product-discovery-title"
+            >
+
+                <!-- =============================================
+                     SECTION HEADER
+                     ============================================= -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            EXPLORE MYSHOP
+                        </p>
+
+                        <h2 id="product-discovery-title">
+                            Discover Products
+                        </h2>
+
+                        <p class="section-description">
+                            Find products you love from different
+                            categories and trusted sellers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     PRODUCT DISCOVERY TOOLBAR
+                     ============================================= -->
+
+                <div
+                    class="product-toolbar"
+                    role="toolbar"
+                    aria-label="Product discovery controls"
+                >
+
+                    <!-- CATEGORY FILTER -->
+
+                    <div class="filter-group">
+
+                        <label
+                            for="categoryFilter"
+                        >
+                            Category
+                        </label>
+
+                        <select
+                            id="categoryFilter"
+                            name="category"
+                            data-product-filter="category"
+                        >
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Fashion">
+                                Fashion
+                            </option>
+
+                            <option value="Home & Living">
+                                Home & Living
+                            </option>
+
+                            <option value="Beauty">
+                                Beauty
+                            </option>
+
+                            <option value="Gaming">
+                                Gaming
+                            </option>
+
+                            <option value="Books">
+                                Books
+                            </option>
+
+                            <option value="Sports">
+                                Sports
+                            </option>
+
+                            <option value="Grocery">
+                                Grocery
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PRICE FILTER -->
+
+                    <div class="filter-group">
+
+                        <label
+                            for="priceFilter"
+                        >
+                            Price
+                        </label>
+
+                        <select
+                            id="priceFilter"
+                            name="price"
+                            data-product-filter="price"
+                        >
+
+                            <option value="all">
+                                All Prices
+                            </option>
+
+                            <option value="under-1000">
+                                Under ৳1,000
+                            </option>
+
+                            <option value="1000-5000">
+                                ৳1,000 - ৳5,000
+                            </option>
+
+                            <option value="5000-10000">
+                                ৳5,000 - ৳10,000
+                            </option>
+
+                            <option value="above-10000">
+                                Above ৳10,000
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RATING FILTER -->
+
+                    <div class="filter-group">
+
+                        <label
+                            for="ratingFilter"
+                        >
+                            Rating
+                        </label>
+
+                        <select
+                            id="ratingFilter"
+                            name="rating"
+                            data-product-filter="rating"
+                        >
+
+                            <option value="all">
+                                All Ratings
+                            </option>
+
+                            <option value="5">
+                                ⭐ 5 Stars
+                            </option>
+
+                            <option value="4">
+                                ⭐ 4+ Stars
+                            </option>
+
+                            <option value="3">
+                                ⭐ 3+ Stars
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SORT -->
+
+                    <div class="filter-group">
+
+                        <label
+                            for="sortProducts"
+                        >
+                            Sort By
+                        </label>
+
+                        <select
+                            id="sortProducts"
+                            name="sort"
+                            data-product-sort
+                        >
+
+                            <option value="featured">
+                                Featured
+                            </option>
+
+                            <option value="popular">
+                                Most Popular
+                            </option>
+
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+
+                            <option value="rating">
+                                Highest Rated
+                            </option>
+
+                            <option value="newest">
+                                Newest
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CLEAR FILTERS -->
+
+                    <button
+                        type="button"
+                        class="clear-filters"
+                        data-clear-product-filters
+                    >
+                        Clear Filters
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     ACTIVE FILTERS
+                     ============================================= -->
+
+                <div
+                    id="activeFilters"
+                    class="active-filters"
+                    aria-live="polite"
+                    aria-label="Active product filters"
+                >
+
+                    <span class="active-filter-label">
+                        Active filters:
+                    </span>
+
+                </div>
+
+
+                <!-- =============================================
+                     PRODUCT RESULT INFORMATION
+                     ============================================= -->
+
+                <div class="product-result-bar">
+
+                    <p
+                        id="productResultCount"
+                        class="product-result-count"
+                        aria-live="polite"
+                    >
+                        Showing available products
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="view-mode-button active"
+                        data-view-mode="grid"
+                        aria-label="Grid view"
+                        aria-pressed="true"
+                    >
+                        ▦
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="view-mode-button"
+                        data-view-mode="list"
+                        aria-label="List view"
+                        aria-pressed="false"
+                    >
+                        ☰
+                    </button>
+
+                </div>
+                                <!-- =============================================
+                     DISCOVERY PRODUCT RESULT AREA
+                     ============================================= -->
+
+                <div
+                    id="discoveryProductGrid"
+                    class="product-grid discovery-product-grid"
+                    data-product-list="discovery"
+                >
+
+                    <!--
+                        Dynamic product results are rendered
+                        here by the application JavaScript.
+
+                        Keeping this container empty prevents
+                        duplicate hard-coded product cards while
+                        allowing the JS product catalogue to
+                        populate the marketplace dynamically.
+                    -->
+
+                </div>
+
+
+                <!-- =============================================
+                     EMPTY RESULT STATE
+                     ============================================= -->
+
+                <div
+                    id="productEmptyState"
+                    class="product-empty-state"
+                    hidden
+                    aria-live="polite"
+                >
+
+                    <div
+                        class="empty-state-icon"
+                        aria-hidden="true"
+                    >
+                        🔎
+                    </div>
+
+
+                    <h3>
+                        No products found
+                    </h3>
+
+
+                    <p>
+                        Try changing your filters or
+                        search for another product.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="empty-state-action"
+                        data-clear-product-filters
+                    >
+                        Clear Filters
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     PAGINATION
+                     ============================================= -->
+
+                <nav
+                    id="productPagination"
+                    class="product-pagination"
+                    aria-label="Product pages"
+                >
+
+                    <button
+                        type="button"
+                        class="pagination-button"
+                        data-page="previous"
+                        aria-label="Previous page"
+                    >
+                        ←
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="pagination-button active"
+                        data-page="1"
+                        aria-current="page"
+                    >
+                        1
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="pagination-button"
+                        data-page="2"
+                    >
+                        2
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="pagination-button"
+                        data-page="3"
+                    >
+                        3
+                    </button>
+
+
+                    <span
+                        class="pagination-ellipsis"
+                        aria-hidden="true"
+                    >
+                        …
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="pagination-button"
+                        data-page="next"
+                        aria-label="Next page"
+                    >
+                        →
+                    </button>
+
+                </nav>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRODUCT DISCOVERY PROMO STRIP
+                 ================================================= -->
+
+            <section
+                class="discovery-promo-strip"
+                aria-label="MyShop shopping benefits"
+            >
+
+                <div class="discovery-promo-item">
+
+                    <span
+                        class="discovery-promo-icon"
+                        aria-hidden="true"
+                    >
+                        ⭐
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Trusted Products
+                        </strong>
+
+                        <p>
+                            Quality products from selected sellers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="discovery-promo-item">
+
+                    <span
+                        class="discovery-promo-icon"
+                        aria-hidden="true"
+                    >
+                        🛡️
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Buyer Protection
+                        </strong>
+
+                        <p>
+                            Shop with confidence on MyShop.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="discovery-promo-item">
+
+                    <span
+                        class="discovery-promo-icon"
+                        aria-hidden="true"
+                    >
+                        💬
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Seller Support
+                        </strong>
+
+                        <p>
+                            Support for buyers and sellers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 BEST SELLING SECTION
+                 PART 5A / 20
+                 ================================================= -->
+
+            <section
+                id="best-selling"
+                class="section best-selling-section"
+                aria-labelledby="best-selling-title"
+            >
+
+                <!-- =============================================
+                     SECTION HEADER
+                     ============================================= -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            CUSTOMER FAVOURITES
+                        </p>
+
+                        <h2 id="best-selling-title">
+                            Best Selling
+                        </h2>
+
+                        <p class="section-description">
+                            Discover products loved by
+                            shoppers across MyShop.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="view-all"
+                        data-product-section="best-selling"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     BEST SELLING FILTER TABS
+                     ============================================= -->
+
+                <div
+                    class="product-tabs"
+                    role="tablist"
+                    aria-label="Best selling categories"
+                >
+
+                    <button
+                        type="button"
+                        class="product-tab active"
+                        data-best-selling-category="all"
+                        role="tab"
+                        aria-selected="true"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-best-selling-category="Electronics"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Electronics
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-best-selling-category="Fashion"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Fashion
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-best-selling-category="Home & Living"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Home & Living
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-best-selling-category="Beauty"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Beauty
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-best-selling-category="Gaming"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Gaming
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     BEST SELLING PRODUCT CONTAINER
+                     ============================================= -->
+
+                <div
+                    id="bestSellingGrid"
+                    class="product-grid best-selling-grid"
+                    data-product-list="best-selling"
+                >
+
+                    <!--
+                        Products for this section are populated
+                        from the application product catalogue.
+
+                        No Flash Sale cards are duplicated here.
+                    -->
+
+                </div>
+
+
+                <!-- =============================================
+                     LOADING STATE
+                     ============================================= -->
+
+                <div
+                    id="bestSellingLoading"
+                    class="product-loading"
+                    hidden
+                    aria-live="polite"
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading best selling products...
+                    </p>
+
+                </div>
+
+                              <!-- =============================================
+                     BEST SELLING SECTION FOOTER
+                     ============================================= -->
+
+                <div class="section-footer">
+
+                    <div class="section-footer-message">
+
+                        <span
+                            class="section-footer-icon"
+                            aria-hidden="true"
+                        >
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Loved by MyShop shoppers
+                            </strong>
+
+                            <p>
+                                Explore popular products selected
+                                from customer shopping trends.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="section-action-button"
+                        data-product-section="best-selling"
+                    >
+                        Explore Best Sellers →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 BEST SELLING PROMOTIONAL BANNER
+                 ================================================= -->
+
+            <section
+                class="marketplace-banner best-selling-banner"
+                aria-label="Best selling promotion"
+            >
+
+                <div class="marketplace-banner-content">
+
+                    <span class="banner-label">
+                        SHOPPER FAVOURITES
+                    </span>
+
+                    <h2>
+                        Products Everyone
+                        Is Talking About
+                    </h2>
+
+                    <p>
+                        Discover highly-rated and popular products
+                        from trusted MyShop sellers.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="banner-button"
+                        data-product-section="best-selling"
+                    >
+                        Shop Best Sellers →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="marketplace-banner-visual"
+                    aria-hidden="true"
+                >
+
+                    <span class="banner-product-icon">
+                        📱
+                    </span>
+
+                    <span class="banner-product-icon">
+                        🎧
+                    </span>
+
+                    <span class="banner-product-icon">
+                        ⌚
+                    </span>
+
+                    <span class="banner-product-icon">
+                        👟
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TRUST / SOCIAL PROOF
+                 ================================================= -->
+
+            <section
+                class="shopper-trust"
+                aria-label="MyShop customer trust"
+            >
+
+                <div class="trust-item">
+
+                    <strong>
+                        10K+
+                    </strong>
+
+                    <span>
+                        Products
+                    </span>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        5K+
+                    </strong>
+
+                    <span>
+                        Happy Shoppers
+                    </span>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        500+
+                    </strong>
+
+                    <span>
+                        Trusted Sellers
+                    </span>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        4.8/5
+                    </strong>
+
+                    <span>
+                        Average Rating
+                    </span>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 NEW ARRIVALS SECTION
+                 PART 6A / 20
+                 ================================================= -->
+
+            <section
+                id="new-arrivals"
+                class="section new-arrivals-section"
+                aria-labelledby="new-arrivals-title"
+            >
+
+                <!-- =============================================
+                     SECTION HEADER
+                     ============================================= -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            JUST LANDED
+                        </p>
+
+                        <h2 id="new-arrivals-title">
+                            New Arrivals
+                        </h2>
+
+                        <p class="section-description">
+                            Discover the latest products added
+                            by our sellers.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="view-all"
+                        data-product-section="new-arrivals"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     NEW ARRIVAL FILTER TABS
+                     ============================================= -->
+
+                <div
+                    class="product-tabs"
+                    role="tablist"
+                    aria-label="New arrival categories"
+                >
+
+                    <button
+                        type="button"
+                        class="product-tab active"
+                        data-new-arrivals-category="all"
+                        role="tab"
+                        aria-selected="true"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-new-arrivals-category="Electronics"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Electronics
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-new-arrivals-category="Fashion"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Fashion
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-new-arrivals-category="Home & Living"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Home & Living
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-new-arrivals-category="Beauty"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Beauty
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-tab"
+                        data-new-arrivals-category="Gaming"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Gaming
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     NEW ARRIVAL PRODUCT GRID
+                     ============================================= -->
+
+                <div
+                    id="newArrivalsGrid"
+                    class="product-grid new-arrivals-grid"
+                    data-product-list="new-arrivals"
+                >
+
+                    <!--
+                        New arrival products will be rendered
+                        dynamically from the product catalogue.
+
+                        No existing Flash Sale or Best Selling
+                        card is duplicated here.
+                    -->
+
+                </div>
+
+
+                <!-- =============================================
+                     LOADING STATE
+                     ============================================= -->
+
+                <div
+                    id="newArrivalsLoading"
+                    class="product-loading"
+                    hidden
+                    aria-live="polite"
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading new arrivals...
+                    </p>
+
+                </div>
+
+                              <!-- =============================================
+                     NEW ARRIVALS FOOTER
+                     ============================================= -->
+
+                <div class="section-footer">
+
+                    <div class="section-footer-message">
+
+                        <span
+                            class="section-footer-icon"
+                            aria-hidden="true"
+                        >
+                            ✨
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Fresh products every day
+                            </strong>
+
+                            <p>
+                                Stay ahead with the latest products
+                                and newest seller listings.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="section-action-button"
+                        data-product-section="new-arrivals"
+                    >
+                        Explore New Arrivals →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NEW ARRIVAL PROMOTIONAL AREA
+                 ================================================= -->
+
+            <section
+                class="marketplace-banner new-arrivals-banner"
+                aria-label="New arrivals promotion"
+            >
+
+                <div class="marketplace-banner-content">
+
+                    <span class="banner-label">
+                        NEW ON MYSHOP
+                    </span>
+
+                    <h2>
+                        Fresh Finds.
+                        New Possibilities.
+                    </h2>
+
+                    <p>
+                        Discover newly listed products from
+                        sellers across different categories.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="banner-button"
+                        data-product-section="new-arrivals"
+                    >
+                        Explore New Arrivals →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="marketplace-banner-visual"
+                    aria-hidden="true"
+                >
+
+                    <span class="banner-product-icon">
+                        📷
+                    </span>
+
+                    <span class="banner-product-icon">
+                        👕
+                    </span>
+
+                    <span class="banner-product-icon">
+                        🎮
+                    </span>
+
+                    <span class="banner-product-icon">
+                        💄
+                    </span>
+
+                    <span class="banner-product-icon">
+                        🏠
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RECENTLY VIEWED SECTION
+                 ================================================= -->
+
+            <section
+                id="recently-viewed"
+                class="section recently-viewed-section"
+                aria-labelledby="recently-viewed-title"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            YOUR ACTIVITY
+                        </p>
+
+                        <h2 id="recently-viewed-title">
+                            Recently Viewed
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="clear-history-button"
+                        data-clear-recently-viewed
+                    >
+                        Clear History
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="recentlyViewedGrid"
+                    class="product-grid recently-viewed-grid"
+                    data-product-list="recently-viewed"
+                >
+
+                    <!--
+                        Recently viewed products are populated
+                        from local application state.
+
+                        This prevents unnecessary duplicate
+                        product markup in the HTML.
+                    -->
+
+                </div>
+
+
+                <div
+                    id="recentlyViewedEmpty"
+                    class="product-empty-state"
+                    hidden
+                >
+
+                    <div
+                        class="empty-state-icon"
+                        aria-hidden="true"
+                    >
+                        👀
+                    </div>
+
+                    <h3>
+                        Nothing viewed yet
+                    </h3>
+
+                    <p>
+                        Products you view will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 RECOMMENDED FOR YOU
+                 PART 7A / 20
+                 ================================================= -->
+
+            <section
+                id="recommended"
+                class="section recommended-section"
+                aria-labelledby="recommended-title"
+            >
+
+                <!-- =============================================
+                     SECTION HEADER
+                     ============================================= -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            PERSONALIZED PICKS
+                        </p>
+
+                        <h2 id="recommended-title">
+                            Recommended For You
+                        </h2>
+
+                        <p class="section-description">
+                            Products selected based on popular
+                            shopping trends and your interests.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="refresh-recommendations"
+                        data-refresh-recommendations
+                        aria-label="Refresh recommendations"
+                        title="Refresh recommendations"
+                    >
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     RECOMMENDATION FILTERS
+                     ============================================= -->
+
+                <div
+                    class="recommendation-controls"
+                    role="toolbar"
+                    aria-label="Recommendation controls"
+                >
+
+                    <button
+                        type="button"
+                        class="recommendation-chip active"
+                        data-recommendation-filter="all"
+                        aria-pressed="true"
+                    >
+                        For You
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="recommendation-chip"
+                        data-recommendation-filter="popular"
+                        aria-pressed="false"
+                    >
+                        Popular
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="recommendation-chip"
+                        data-recommendation-filter="trending"
+                        aria-pressed="false"
+                    >
+                        Trending
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="recommendation-chip"
+                        data-recommendation-filter="deals"
+                        aria-pressed="false"
+                    >
+                        Best Deals
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     RECOMMENDED PRODUCT GRID
+                     ============================================= -->
+
+                <div
+                    id="recommendedProductGrid"
+                    class="product-grid recommended-product-grid"
+                    data-product-list="recommended"
+                >
+
+                    <!--
+                        Recommended products are rendered by
+                        the application product catalogue.
+
+                        Existing product cards are intentionally
+                        not duplicated here.
+                    -->
+
+                </div>
+
+
+                <!-- =============================================
+                     RECOMMENDATION LOADING
+                     ============================================= -->
+
+                <div
+                    id="recommendationLoading"
+                    class="product-loading"
+                    hidden
+                    aria-live="polite"
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Finding products for you...
+                    </p>
+
+                </div>
+
+
+                <!-- =============================================
+                     RECOMMENDATION EMPTY STATE
+                     ============================================= -->
+
+                <div
+                    id="recommendationEmpty"
+                    class="product-empty-state"
+                    hidden
+                    aria-live="polite"
+                >
+
+                    <div
+                        class="empty-state-icon"
+                        aria-hidden="true"
+                    >
+                        💡
+                    </div>
+
+                    <h3>
+                        We're preparing recommendations
+                    </h3>
+
+                    <p>
+                        Browse a few products and we'll have
+                        better recommendations for you.
+                    </p>
+
+                </div>
+
+                              <!-- =============================================
+                     RECOMMENDATION FOOTER
+                     ============================================= -->
+
+                <div class="section-footer">
+
+                    <div class="section-footer-message">
+
+                        <span
+                            class="section-footer-icon"
+                            aria-hidden="true"
+                        >
+                            💡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Your shopping, your way
+                            </strong>
+
+                            <p>
+                                Recommendations improve as you
+                                explore products on MyShop.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="section-action-button"
+                        data-scroll-target="product-discovery"
+                    >
+                        Discover More Products →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DEALS & CAMPAIGNS SECTION
+                 ================================================= -->
+
+            <section
+                id="deals"
+                class="section deals-section"
+                aria-labelledby="deals-title"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            MYSHOP CAMPAIGNS
+                        </p>
+
+                        <h2 id="deals-title">
+                            Deals & Campaigns
+                        </h2>
+
+                        <p class="section-description">
+                            Special promotions and shopping events
+                            available for a limited time.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="view-all"
+                        data-deals-action="view-all"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     CAMPAIGN CARDS
+                     ============================================= -->
+
+                <div
+                    class="campaign-grid"
+                    role="list"
+                >
+
+                    <article
+                        class="campaign-card"
+                        data-campaign="mega-deal"
+                        role="listitem"
+                    >
+
+                        <div class="campaign-card-content">
+
+                            <span class="campaign-label">
+                                MEGA DEAL
+                            </span>
+
+                            <h3>
+                                Save Big
+                                Every Day
+                            </h3>
+
+                            <p>
+                                Find special prices across
+                                selected categories.
+                            </p>
+
+                            <button
+                                type="button"
+                                data-campaign-action="mega-deal"
+                            >
+                                Shop Deals →
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="campaign-card-visual"
+                            aria-hidden="true"
+                        >
+                            💰
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="campaign-card"
+                        data-campaign="free-delivery"
+                        role="listitem"
+                    >
+
+                        <div class="campaign-card-content">
+
+                            <span class="campaign-label">
+                                DELIVERY OFFER
+                            </span>
+
+                            <h3>
+                                Free Delivery
+                            </h3>
+
+                            <p>
+                                Enjoy convenient delivery on
+                                selected products.
+                            </p>
+
+                            <button
+                                type="button"
+                                data-campaign-action="free-delivery"
+                            >
+                                Explore Offer →
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="campaign-card-visual"
+                            aria-hidden="true"
+                        >
+                            🚚
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="campaign-card"
+                        data-campaign="member-savings"
+                        role="listitem"
+                    >
+
+                        <div class="campaign-card-content">
+
+                            <span class="campaign-label">
+                                MEMBER SAVINGS
+                            </span>
+
+                            <h3>
+                                More Rewards
+                            </h3>
+
+                            <p>
+                                Get more value from every
+                                MyShop shopping experience.
+                            </p>
+
+                            <button
+                                type="button"
+                                data-campaign-action="member-savings"
+                            >
+                                Learn More →
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="campaign-card-visual"
+                            aria-hidden="true"
+                        >
+                            🎁
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 TOP BRANDS & TRUSTED SHOPS
+                 PART 8A / 20
+                 ================================================= -->
+
+            <section
+                id="brands"
+                class="section brands-section"
+                aria-labelledby="brands-title"
+            >
+
+                <!-- =============================================
+                     SECTION HEADER
+                     ============================================= -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            SHOP WITH CONFIDENCE
+                        </p>
+
+                        <h2 id="brands-title">
+                            Popular Brands
+                        </h2>
+
+                        <p class="section-description">
+                            Explore products from popular brands
+                            and trusted shops.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="view-all"
+                        data-brand-action="view-all"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     BRAND GRID
+                     ============================================= -->
+
+                <div
+                    class="brand-grid"
+                    role="list"
+                >
+
+
+                    <!-- BRAND 1 -->
+
+                    <button
+                        type="button"
+                        class="brand-card"
+                        data-brand="MyTech"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="brand-logo"
+                            aria-hidden="true"
+                        >
+                            MT
+                        </div>
+
+                        <div class="brand-info">
+
+                            <h3>
+                                MyTech
+                            </h3>
+
+                            <p>
+                                Electronics
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- BRAND 2 -->
+
+                    <button
+                        type="button"
+                        class="brand-card"
+                        data-brand="StyleHub"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="brand-logo"
+                            aria-hidden="true"
+                        >
+                            SH
+                        </div>
+
+                        <div class="brand-info">
+
+                            <h3>
+                                StyleHub
+                            </h3>
+
+                            <p>
+                                Fashion
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- BRAND 3 -->
+
+                    <button
+                        type="button"
+                        class="brand-card"
+                        data-brand="HomeNest"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="brand-logo"
+                            aria-hidden="true"
+                        >
+                            HN
+                        </div>
+
+                        <div class="brand-info">
+
+                            <h3>
+                                HomeNest
+                            </h3>
+
+                            <p>
+                                Home & Living
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- BRAND 4 -->
+
+                    <button
+                        type="button"
+                        class="brand-card"
+                        data-brand="BeautyCare"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="brand-logo"
+                            aria-hidden="true"
+                        >
+                            BC
+                        </div>
+
+                        <div class="brand-info">
+
+                            <h3>
+                                BeautyCare
+                            </h3>
+
+                            <p>
+                                Beauty
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- BRAND 5 -->
+
+                    <button
+                        type="button"
+                        class="brand-card"
+                        data-brand="GameZone"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="brand-logo"
+                            aria-hidden="true"
+                        >
+                            GZ
+                        </div>
+
+                        <div class="brand-info">
+
+                            <h3>
+                                GameZone
+                            </h3>
+
+                            <p>
+                                Gaming
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- BRAND 6 -->
+
+                    <button
+                        type="button"
+                        class="brand-card"
+                        data-brand="BookWorld"
+                        role="listitem"
+                    >
+
+                        <div
+                            class="brand-logo"
+                            aria-hidden="true"
+                        >
+                            BW
+                        </div>
+
+                        <div class="brand-info">
+
+                            <h3>
+                                BookWorld
+                            </h3>
+
+                            <p>
+                                Books
+                            </p>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     VERIFIED SELLER NOTICE
+                     ============================================= -->
+
+                <div class="verified-shop-notice">
+
+                    <span
+                        class="verified-shop-icon"
+                        aria-hidden="true"
+                    >
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Trusted marketplace
+                        </strong>
+
+                        <p>
+                            Look for verified sellers and shop
+                            with greater confidence.
+                        </p>
+
+                    </div>
+
+                </div>
+                                <!-- =============================================
+                     TRUSTED SHOPS SECTION
+                     ============================================= -->
+
+                <section
+                    id="shops"
+                    class="trusted-shops"
+                    aria-labelledby="trusted-shops-title"
+                >
+
+                    <div class="subsection-header">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                VERIFIED SELLERS
+                            </p>
+
+                            <h2 id="trusted-shops-title">
+                                Trusted Shops
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="view-all-button"
+                            data-shop-action="view-all"
+                        >
+                            View All →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="trustedShopGrid"
+                        class="shop-grid"
+                    >
+
+                        <!-- SHOP 1 -->
+
+                        <article
+                            class="shop-card"
+                            data-shop-id="tech-world"
+                        >
+
+                            <div class="shop-avatar">
+                                TW
+                            </div>
+
+                            <div class="shop-card-info">
+
+                                <h3>
+                                    Tech World
+                                </h3>
+
+                                <span class="verified-badge">
+                                    ✓ Verified
+                                </span>
+
+                                <p>
+                                    Electronics & Gadgets
+                                </p>
+
+                                <div class="shop-rating">
+                                    ⭐ 4.8
+                                    <span>
+                                        · 98% positive
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="shop-button"
+                                data-shop-action="visit"
+                                data-shop-id="tech-world"
+                            >
+                                Visit Shop
+                            </button>
+
+                        </article>
+
+
+                        <!-- SHOP 2 -->
+
+                        <article
+                            class="shop-card"
+                            data-shop-id="fashion-house"
+                        >
+
+                            <div class="shop-avatar">
+                                FH
+                            </div>
+
+                            <div class="shop-card-info">
+
+                                <h3>
+                                    Fashion House
+                                </h3>
+
+                                <span class="verified-badge">
+                                    ✓ Verified
+                                </span>
+
+                                <p>
+                                    Fashion & Accessories
+                                </p>
+
+                                <div class="shop-rating">
+                                    ⭐ 4.7
+                                    <span>
+                                        · 97% positive
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="shop-button"
+                                data-shop-action="visit"
+                                data-shop-id="fashion-house"
+                            >
+                                Visit Shop
+                            </button>
+
+                        </article>
+
+
+                        <!-- SHOP 3 -->
+
+                        <article
+                            class="shop-card"
+                            data-shop-id="home-living-store"
+                        >
+
+                            <div class="shop-avatar">
+                                HL
+                            </div>
+
+                            <div class="shop-card-info">
+
+                                <h3>
+                                    Home & Living Store
+                                </h3>
+
+                                <span class="verified-badge">
+                                    ✓ Verified
+                                </span>
+
+                                <p>
+                                    Home & Living
+                                </p>
+
+                                <div class="shop-rating">
+                                    ⭐ 4.9
+                                    <span>
+                                        · 99% positive
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="shop-button"
+                                data-shop-action="visit"
+                                data-shop-id="home-living-store"
+                            >
+                                Visit Shop
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     BRAND / SHOP DISCOVERY BANNER
+                     ============================================= -->
+
+                <section
+                    class="shop-discovery-banner"
+                    aria-label="Seller discovery"
+                >
+
+                    <div class="shop-discovery-content">
+
+                        <span class="banner-label">
+                            FIND YOUR FAVOURITE SHOP
+                        </span>
+
+                        <h2>
+                            One Marketplace.
+                            Thousands of Choices.
+                        </h2>
+
+                        <p>
+                            Explore different shops, compare products,
+                            and find sellers that match your needs.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="banner-button"
+                            data-shop-action="view-all"
+                        >
+                            Explore Shops →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="shop-discovery-visual"
+                        aria-hidden="true"
+                    >
+
+                        <span>
+                            🏪
+                        </span>
+
+                        <span>
+                            ⭐
+                        </span>
+
+                        <span>
+                            🛍️
+                        </span>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+                      <!-- =================================================
+                 SELLER MARKETPLACE SECTION
+                 PART 9A / 20
+                 ================================================= -->
+
+            <section
+                id="seller"
+                class="section seller-section"
+                aria-labelledby="seller-title"
+            >
+
+                <!-- =============================================
+                     SELLER CTA HEADER
+                     ============================================= -->
+
+                <div class="seller-hero">
+
+                    <div class="seller-hero-content">
+
+                        <p class="section-eyebrow">
+                            GROW WITH MYSHOP
+                        </p>
+
+                        <h2 id="seller-title">
+                            Become a MyShop Seller
+                        </h2>
+
+                        <p>
+                            Start your online business, reach more
+                            customers, and grow your sales with MyShop.
+                        </p>
+
+
+                        <div class="seller-actions">
+
+                            <button
+                                type="button"
+                                class="seller-primary-button"
+                                data-seller-action="register"
+                            >
+                                Start Selling →
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="seller-secondary-button"
+                                data-seller-action="learn-more"
+                            >
+                                Learn More
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="seller-hero-visual"
+                        aria-hidden="true"
+                    >
+
+                        <div class="seller-visual-card">
+
+                            <span>
+                                🏪
+                            </span>
+
+                            <strong>
+                                MyShop Seller
+                            </strong>
+
+                            <small>
+                                Grow your business
+                            </small>
+
+                        </div>
+
+                        <div class="seller-floating-icon">
+                            📈
+                        </div>
+
+                        <div class="seller-floating-icon">
+                            💰
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     SELLER BENEFITS
+                     ============================================= -->
+
+                <div
+                    class="seller-benefits"
+                    aria-label="Seller benefits"
+                >
+
+                    <article class="seller-benefit">
+
+                        <div
+                            class="seller-benefit-icon"
+                            aria-hidden="true"
+                        >
+                            👥
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Reach More Customers
+                            </h3>
+
+                            <p>
+                                Showcase your products to shoppers
+                                across the marketplace.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="seller-benefit">
+
+                        <div
+                            class="seller-benefit-icon"
+                            aria-hidden="true"
+                        >
+                            📊
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Manage Your Business
+                            </h3>
+
+                            <p>
+                                Keep track of products, orders,
+                                and sales from one place.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="seller-benefit">
+
+                        <div
+                            class="seller-benefit-icon"
+                            aria-hidden="true"
+                        >
+                            🚚
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Delivery Support
+                            </h3>
+
+                            <p>
+                                Make order fulfilment easier with
+                                marketplace delivery support.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="seller-benefit">
+
+                        <div
+                            class="seller-benefit-icon"
+                            aria-hidden="true"
+                        >
+                            📈
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Grow Your Sales
+                            </h3>
+
+                            <p>
+                                Use marketplace campaigns and
+                                promotions to grow your business.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                              <!-- =============================================
+                     HOW SELLING WORKS
+                     ============================================= -->
+
+                <div class="seller-process">
+
+                    <div class="subsection-header">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                SIMPLE PROCESS
+                            </p>
+
+                            <h2>
+                                Start Selling in 4 Steps
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="seller-steps"
+                        role="list"
+                    >
+
+                        <!-- STEP 1 -->
+
+                        <article
+                            class="seller-step"
+                            role="listitem"
+                        >
+
+                            <span class="seller-step-number">
+                                01
+                            </span>
+
+                            <div
+                                class="seller-step-icon"
+                                aria-hidden="true"
+                            >
+                                📝
+                            </div>
+
+                            <h3>
+                                Create Your Account
+                            </h3>
+
+                            <p>
+                                Register as a seller and provide
+                                your basic business information.
+                            </p>
+
+                        </article>
+
+
+                        <!-- STEP 2 -->
+
+                        <article
+                            class="seller-step"
+                            role="listitem"
+                        >
+
+                            <span class="seller-step-number">
+                                02
+                            </span>
+
+                            <div
+                                class="seller-step-icon"
+                                aria-hidden="true"
+                            >
+                                📦
+                            </div>
+
+                            <h3>
+                                Add Your Products
+                            </h3>
+
+                            <p>
+                                Upload your products with images,
+                                prices, descriptions, and stock.
+                            </p>
+
+                        </article>
+
+
+                        <!-- STEP 3 -->
+
+                        <article
+                            class="seller-step"
+                            role="listitem"
+                        >
+
+                            <span class="seller-step-number">
+                                03
+                            </span>
+
+                            <div
+                                class="seller-step-icon"
+                                aria-hidden="true"
+                            >
+                                🛒
+                            </div>
+
+                            <h3>
+                                Receive Orders
+                            </h3>
+
+                            <p>
+                                Customers can discover your products
+                                and place orders through MyShop.
+                            </p>
+
+                        </article>
+
+
+                        <!-- STEP 4 -->
+
+                        <article
+                            class="seller-step"
+                            role="listitem"
+                        >
+
+                            <span class="seller-step-number">
+                                04
+                            </span>
+
+                            <div
+                                class="seller-step-icon"
+                                aria-hidden="true"
+                            >
+                                💰
+                            </div>
+
+                            <h3>
+                                Grow & Earn
+                            </h3>
+
+                            <p>
+                                Fulfil orders, build your reputation,
+                                and grow your online business.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     SELLER HELP / FAQ ENTRY
+                     ============================================= -->
+
+                <div class="seller-help">
+
+                    <div class="seller-help-content">
+
+                        <span
+                            class="seller-help-icon"
+                            aria-hidden="true"
+                        >
+                            💬
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Need help becoming a seller?
+                            </h3>
+
+                            <p>
+                                Find answers about registration,
+                                products, orders, payments, and
+                                marketplace selling.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="seller-help-button"
+                        data-seller-action="help"
+                    >
+                        Seller Help Center →
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     SELLER FINAL CTA
+                     ============================================= -->
+
+                <div class="seller-final-cta">
+
+                    <div>
+
+                        <span class="banner-label">
+                            READY TO START?
+                        </span>
+
+                        <h2>
+                            Turn Your Products
+                            Into a Growing Business
+                        </h2>
+
+                        <p>
+                            Join MyShop and start reaching customers
+                            online today.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="seller-primary-button"
+                        data-seller-action="register"
+                    >
+                        Become a Seller →
+                    </button>
+
+                </div>
+
+            </section>
+
+                      <!-- =================================================
+                 CUSTOMER PERSONAL AREA
+                 PART 10A / 20
+                 ================================================= -->
+
+            <section
+                id="customer-area"
+                class="section customer-area-section"
+                aria-labelledby="customer-area-title"
+            >
+
+                <!-- =============================================
+                     CUSTOMER AREA HEADER
+                     ============================================= -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            YOUR MYSHOP
+                        </p>
+
+                        <h2 id="customer-area-title">
+                            Your Shopping Space
+                        </h2>
+
+                        <p class="section-description">
+                            Keep your wishlist, orders, saved products,
+                            and shopping preferences in one place.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="account-action-button"
+                        onclick="openLogin()"
+                    >
+                        👤 My Account
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     CUSTOMER QUICK ACTIONS
+                     ============================================= -->
+
+                <div
+                    class="customer-quick-actions"
+                    role="list"
+                >
+
+                    <!-- WISHLIST -->
+
+                    <button
+                        type="button"
+                        class="customer-action-card"
+                        data-customer-action="wishlist"
+                        role="listitem"
+                    >
+
+                        <span
+                            class="customer-action-icon"
+                            aria-hidden="true"
+                        >
+                            ♡
+                        </span>
+
+                        <span class="customer-action-content">
+
+                            <strong>
+                                Wishlist
+                            </strong>
+
+                            <small>
+                                <span data-wishlist-count>
+                                    0
+                                </span>
+                                saved items
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="customer-action-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- ORDERS -->
+
+                    <button
+                        type="button"
+                        class="customer-action-card"
+                        data-customer-action="orders"
+                        role="listitem"
+                    >
+
+                        <span
+                            class="customer-action-icon"
+                            aria-hidden="true"
+                        >
+                            📦
+                        </span>
+
+                        <span class="customer-action-content">
+
+                            <strong>
+                                My Orders
+                            </strong>
+
+                            <small>
+                                Track your purchases
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="customer-action-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- CART -->
+
+                    <button
+                        type="button"
+                        class="customer-action-card"
+                        onclick="openCart()"
+                        role="listitem"
+                    >
+
+                        <span
+                            class="customer-action-icon"
+                            aria-hidden="true"
+                        >
+                            🛒
+                        </span>
+
+                        <span class="customer-action-content">
+
+                            <strong>
+                                Shopping Cart
+                            </strong>
+
+                            <small>
+                                <span id="customerCartCount">
+                                    0
+                                </span>
+                                items
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="customer-action-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- RECENTLY VIEWED -->
+
+                    <button
+                        type="button"
+                        class="customer-action-card"
+                        data-scroll-target="recently-viewed"
+                        role="listitem"
+                    >
+
+                        <span
+                            class="customer-action-icon"
+                            aria-hidden="true"
+                        >
+                            👀
+                        </span>
+
+                        <span class="customer-action-content">
+
+                            <strong>
+                                Recently Viewed
+                            </strong>
+
+                            <small>
+                                Products you explored
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="customer-action-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     WISHLIST PREVIEW
+                     ============================================= -->
+
+                <div
+                    id="wishlist"
+                    class="customer-subsection wishlist-section"
+                    aria-labelledby="wishlist-title"
+                >
+
+                    <div class="subsection-header">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                SAVED FOR LATER
+                            </p>
+
+                            <h2 id="wishlist-title">
+                                My Wishlist
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="clear-wishlist-button"
+                            data-clear-wishlist
+                        >
+                            Clear Wishlist
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="wishlistGrid"
+                        class="product-grid wishlist-grid"
+                        data-product-list="wishlist"
+                    >
+
+                        <!--
+                            Wishlist items are rendered dynamically
+                            from application state.
+
+                            Products are NOT duplicated here.
+                        -->
+
+                    </div>
+
+
+                    <div
+                        id="wishlistEmpty"
+                        class="product-empty-state"
+                        hidden
+                        aria-live="polite"
+                    >
+
+                        <div
+                            class="empty-state-icon"
+                            aria-hidden="true"
+                        >
+                            ♡
+                        </div>
+
+                        <h3>
+                            Your wishlist is empty
+                        </h3>
+
+                        <p>
+                            Save products you love and
+                            find them here later.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="empty-state-action"
+                            data-scroll-target="product-discovery"
+                        >
+                            Explore Products →
+                        </button>
+
+                    </div>
+
+                </div>
+
+                              <!-- =============================================
+                     ORDER SUMMARY / CART PREVIEW
+                     ============================================= -->
+
+                <section
+                    id="order-summary"
+                    class="customer-subsection order-summary-section"
+                    aria-labelledby="order-summary-title"
+                >
+
+                    <div class="subsection-header">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                SHOPPING CART
+                            </p>
+
+                            <h2 id="order-summary-title">
+                                Your Cart
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="view-cart-button"
+                            onclick="openCart()"
+                        >
+                            Open Cart →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="cartPreview"
+                        class="cart-preview"
+                    >
+
+                        <div
+                            id="cartPreviewItems"
+                            class="cart-preview-items"
+                        >
+
+                            <!--
+                                Cart items are managed by app.js.
+                                No product is hard-coded here.
+                            -->
+
+                        </div>
+
+
+                        <div class="cart-preview-summary">
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Items
+                                </span>
+
+                                <strong id="cartPreviewCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-row">
+
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="cartPreviewSubtotal">
+                                    ৳0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="cart-summary-row cart-total-row">
+
+                                <span>
+                                    Total
+                                </span>
+
+                                <strong id="cartPreviewTotal">
+                                    ৳0
+                                </strong>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="checkout-button"
+                                data-checkout-action="start"
+                                onclick="openCart()"
+                            >
+                                Proceed to Checkout →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     CUSTOMER SUPPORT
+                     ============================================= -->
+
+                <section
+                    id="support"
+                    class="support-section"
+                    aria-labelledby="support-title"
+                >
+
+                    <div class="support-content">
+
+                        <p class="section-eyebrow">
+                            NEED HELP?
+                        </p>
+
+                        <h2 id="support-title">
+                            We're Here to Help
+                        </h2>
+
+                        <p>
+                            Get help with your orders, payments,
+                            returns, account, or shopping experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="support-actions">
+
+                        <button
+                            type="button"
+                            class="support-button"
+                            data-support-action="help"
+                        >
+                            💬 Help Center
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="support-button"
+                            data-support-action="contact"
+                        >
+                            📞 Contact Us
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="support-button"
+                            data-support-action="returns"
+                        >
+                            🔄 Returns & Refunds
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+        </main>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer
+            id="site-footer"
+            class="site-footer"
+        >
+
+            <div class="footer-content">
+
+
+                <!-- BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="#"
+                        class="footer-logo"
+                    >
+                        My<span>Shop</span>
+                    </a>
+
+                    <p>
+                        Your trusted online marketplace for
+                        products from trusted sellers.
+                    </p>
+
+                </div>
+
+
+                <!-- SHOP -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Shop
+                    </h3>
+
+                    <a href="#categories">
+                        Categories
+                    </a>
+
+                    <a href="#flash-sale">
+                        Flash Sale
+                    </a>
+
+                    <a href="#best-selling">
+                        Best Selling
+                    </a>
+
+                    <a href="#new-arrivals">
+                        New Arrivals
+                    </a>
+
+                    <a href="#deals">
+                        Deals & Campaigns
+                    </a>
+
+                </div>
+
+
+                <!-- CUSTOMER -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Customer
+                    </h3>
+
+                    <a href="#customer-area">
+                        My Account
+                    </a>
+
+                    <a href="#wishlist">
+                        Wishlist
+                    </a>
+
+                    <a href="#order-summary">
+                        My Cart
+                    </a>
+
+                    <a href="#support">
+                        Help Center
+                    </a>
+
+                    <a href="#support">
+                        Returns & Refunds
+                    </a>
+
+                </div>
+
+
+                <!-- SELLER -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Seller
+                    </h3>
+
+                    <a href="#seller">
+                        Become a Seller
+                    </a>
+
+                    <button
+                        type="button"
+                        data-seller-action="help"
+                    >
+                        Seller Help
+                    </button>
+
+                    <button
+                        type="button"
+                        data-seller-action="register"
+                    >
+                        Seller Registration
+                    </button>
+
+                </div>
+
+
+                <!-- CONNECT -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Connect
+                    </h3>
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        Facebook
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        Instagram
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+                        YouTube
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Contact"
+                    >
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    © 2026 MyShop. All rights reserved.
+                </p>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                    <a href="#">
+                        Cookie Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+
+        <!-- =================================================
+             CART MODAL
+             ================================================= -->
+
+        <div
+            id="cartModal"
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cartModalTitle"
+            hidden
+        >
+
+            <div class="modal-overlay" data-close-modal></div>
+
+
+            <div class="modal-content cart-modal-content">
+
+                <div class="modal-header">
+
+                    <h2 id="cartModalTitle">
+                        Shopping Cart
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="modal-close"
+                        data-close-modal
+                        aria-label="Close cart"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="cartItems"
+                    class="cart-items"
+                ></div>
+
+
+                <div
+                    id="emptyCart"
+                    class="modal-empty-state"
+                    hidden
+                >
+
+                    <div aria-hidden="true">
+                        🛒
+                    </div>
+
+                    <h3>
+                        Your cart is empty
+                    </h3>
+
+                    <p>
+                        Add products to your cart
+                        to continue shopping.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="shop-btn"
+                        data-close-modal
+                        data-scroll-target="product-discovery"
+                    >
+                        Start Shopping →
+                    </button>
+
+                </div>
+
+
+                <div class="cart-modal-footer">
+
+                    <div class="modal-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="cartTotal">
+                            ৳0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="checkout-button"
+                        data-checkout-action="start"
+                    >
+                        Checkout →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LOGIN / REGISTER MODAL
+             ================================================= -->
+
+        <div
+            id="loginModal"
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="loginModalTitle"
+            hidden
+        >
+
+            <div class="modal-overlay" data-close-modal></div>
+
+
+            <div class="modal-content auth-modal-content">
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            WELCOME BACK
+                        </p>
+
+                        <h2 id="loginModalTitle">
+                            Login to MyShop
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="modal-close"
+                        data-close-modal
+                        aria-label="Close login"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form
+                    id="loginForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email or Phone
+                        </label>
+
+                        <input
+                            type="text"
+                            id="loginEmail"
+                            name="email"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                name="remember"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            type="button"
+                            class="text-button"
+                            data-auth-action="forgot-password"
+                        >
+                            Forgot Password?
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>
+                        OR
+                    </span>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="social-login-button"
+                    data-auth-action="google"
+                >
+                    Continue with Google
+                </button>
+
+
+                <p class="auth-switch">
+
+                    Don't have an account?
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        data-auth-action="register"
+                    >
+                        Create Account
+                    </button>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NOTIFICATION PANEL
+             ================================================= -->
+
+        <aside
+            id="notificationPanel"
+            class="notification-panel"
+            aria-labelledby="notificationTitle"
+            hidden
+        >
+
+            <div class="notification-header">
+
+                <h2 id="notificationTitle">
+                    Notifications
+                </h2>
+
+                <button
+                    type="button"
+                    class="panel-close"
+                    data-close-notifications
+                    aria-label="Close notifications"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                id="notificationList"
+                class="notification-list"
+            >
+
+                <!-- Notifications rendered by app.js -->
+
+            </div>
+
+
+            <div
+                id="emptyNotifications"
+                class="modal-empty-state"
+                hidden
+            >
+
+                <div aria-hidden="true">
+                    🔔
+                </div>
+
+                <h3>
+                    No notifications
+                </h3>
+
+                <p>
+                    You're all caught up.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             GLOBAL CONFIRMATION MODAL
+             ================================================= -->
+
+        <div
+            id="confirmModal"
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="confirmModalTitle"
+            hidden
+        >
+
+            <div class="modal-overlay"></div>
+
+
+            <div class="modal-content confirmation-modal">
+
+                <div
+                    class="confirmation-icon"
+                    aria-hidden="true"
+                >
+                    ?
+                </div>
+
+
+                <h2 id="confirmModalTitle">
+                    Confirm Action
+                </h2>
+
+
+                <p id="confirmModalMessage">
+                    Are you sure you want to continue?
+                </p>
+
+
+                <div class="confirmation-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        data-confirm-cancel
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        data-confirm-ok
+                    >
+                        Confirm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- END #app -->
+
+
+    <!-- =================================================
+         JAVASCRIPT
+         ================================================= -->
+
+    <script
+        src="js/app.js"
+        defer
+    ></script>
+
+
+</body>
+
+</html>
